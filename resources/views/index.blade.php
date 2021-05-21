@@ -12,7 +12,8 @@
     <h1>Instituto Tecnologico de Veracruz</h1>
     <h2>Gestion Tecnologica y Vinculacion</h2>
 
-    <button>Inicia sesion para agendar tu cita</button>
+    <p>Cambiar despues</p>
+    <a href="/estudiante">Vista estudiante</a>
 
 </body>
 

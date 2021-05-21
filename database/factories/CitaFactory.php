@@ -22,6 +22,7 @@ class CitaFactory extends Factory
     public function definition()
     {
         return [
+            'service' => $this->faker->randomElement(['ss', 'rd']),
             'date_taken' => $this->faker->date(),
             'hour_taken' => $this->faker->time(),
             'n_control' => $this->faker->regexify('[E]([1-2][0-9]|[3][0])(\d{6})'),

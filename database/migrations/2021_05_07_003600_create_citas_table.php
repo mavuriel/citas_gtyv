@@ -15,12 +15,13 @@ class CreateCitasTable extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
+            $table->char('service', 50); //Tipo de servicio
             $table->date('date_taken'); //Fecha cita
-            $table->time('hour_taken'); //hora tomada
+            $table->time('hour_taken'); //Hora tomada
             $table->char('n_control', 50); //Numero de control
-            $table->string('name', 100); //nombre
+            $table->string('name', 100); //Nombre del alumno
             $table->string('asigned_to'); //Asignado a
-            $table->timestamps(); //create at update att
+            $table->timestamps(); //create at - update at
         });
     }
 
