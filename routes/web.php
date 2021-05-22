@@ -29,14 +29,13 @@ Route::get('/', HomeController::class);
 //Pagina principal estudiante
 Route::get('/estudiante', [EstudianteController::class, 'index'])->name('inicio.estudiante');
 //Creacion de cita
-Route::get('/cita', [EstudianteController::class, 'create'])->name('cita.estudiante');
+Route::post('/cita', [EstudianteController::class, 'create'])->name('cita.estudiante');
 //Recibe informacion del formulario
-Route::post('/cita', [EstudianteController::class, 'store'])->name('store.estudiante');
+Route::post('/cita/guardar', [EstudianteController::class, 'store'])->name('store.estudiante');
 //Citas estudiante
 Route::get('/miscitas/{cita}', [EstudianteController::class, 'show'])->name('show.estudiante');
 //Mostrar informacion personal
 Route::get('/informacion', [EstudianteController::class, 'info'])->name('info.estudiante');
-
 
 //Todos los registros
 Route::get('/registros', [AdmController::class, 'index'])->name('log.citas');

@@ -15,8 +15,11 @@ class EstudianteController extends Controller
     public function create(Request $req)
     {
         $fes = $req->fecha;
-        $msn = $this->search();
-        return view('estudiante.formestudiante', compact('msn', 'fes'));
+        $msn = $this->search($fes);
+
+        return $msn;
+        /* return view('estudiante.formestudiante', compact('taken', 'jsonp')); */
+        /* return print_r($jsonp); */
     }
 
     public function store(Request $req)
@@ -40,16 +43,81 @@ class EstudianteController extends Controller
         return view('estudiante.citasestudiante', compact('cita'));
     }
 
-    public function search()
+    public function search($fes)
     {
-        $hours = array(
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00"
-        );
+        $taken = Cita::select('hour_taken')
+            ->where('date_taken', $fes)
+            ->get();
+
+        $jsonp = json_decode($taken);
+        $hours = [
+            '10:00:00',
+            "11:00:00",
+            "12:00:00", //*
+            "13:00:00",
+            "14:00:00",
+            "14:30:00", //*
+            "15:00:00"  //*
+        ];
+        /* $dis = array_diff($p, $jsonp); */
+        /*
+
+        /* foreach ($hours as $h) {
+            print $h;
+        } */
+        /* print_r($hours);
+        print_r($jsonp); */
+
+        /* print_r($dis); */
+
+
+        foreach ($jsonp as $s) {
+            $p[] = $s->hour_taken;
+        }
         print_r($hours);
+        print_r($p);
+        $dis = array_diff($hours, $p);
+        print_r($dis);
+
+        /*
+
+        Array ( [0] => 10:00
+                [1] => 11:00
+                [2] => 12:00
+                [3] => 13:00
+                [4] => 14:00
+                [5] => 14:30
+                [6] => 15:00 )
+
+        Array ( [0] => 10:00:00
+                [1] => 12:00:00
+                [2] => 14:30:00
+                [3] => 15:00:00 )
+
+        Array ( [0] => 10:00
+                [1] => 11:00
+                [2] => 12:00
+                [3] => 13:00
+                [4] => 14:00
+                [5] => 14:30
+                [6] => 15:00 )
+        */
+
+        /*
+            Array ( [0] => 10:00:00
+                    [1] => 11:00:00
+                    [2] => 12:00:00
+                    [3] => 13:00:00
+                    [4] => 14:00:00
+                    [5] => 14:30:00
+                    [6] => 15:00:00 )
+            Array ( [0] => 10:00:00
+                    [1] => 12:00:00
+                    [2] => 14:30:00
+                    [3] => 15:00:00 )
+            Array ( [1] => 11:00:00
+                    [3] => 13:00:00
+                    [4] => 14:00:00 )
+        */
     }
 }

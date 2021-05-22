@@ -8,10 +8,7 @@
 <a href="">Ver informacion</a>
 <h2>Si ya fue verificada agenda tu cita</h2>
 
-{{--
-    TODO: cambiar metodo de envio ya que se ve la info en la url
-    --}}
-<form method="GET" action="{{route('cita.estudiante')}}">
+<form method="POST" action="{{route('cita.estudiante')}}">
     @csrf
     <label for=" date">¿Que dia quieres tu cita?</label>
     <input id="date" type="date" name="fecha">
