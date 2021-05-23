@@ -14,12 +14,17 @@ class EstudianteController extends Controller
 
     public function create(Request $req)
     {
+        /* Obtencion de la fecha en la vista estudiante */
         $fes = $req->fecha;
-        $msn = $this->search($fes);
+        /* Envio el dato a otra funcion para obtener las horas disponibles */
+        $res = $this->search($fes);
 
-        return $msn;
-        /* return view('estudiante.formestudiante', compact('taken', 'jsonp')); */
-        /* return print_r($jsonp); */
+        if ($res[1] == 'nada') {
+            echo 'Se enviran todas las horas disponibles';
+        } else {
+            echo 'Se enviaran las horas que no estan ocupadas';
+        }
+        return view('estudiante.formestudiante', compact('res'));
     }
 
     public function store(Request $req)
@@ -45,79 +50,38 @@ class EstudianteController extends Controller
 
     public function search($fes)
     {
+        /* Horas disponibles */
+        $hours = [
+            "10:00:00",
+            "11:00:00",
+            "12:00:00",
+            "13:00:00",
+            "14:00:00",
+            "15:00:00"
+        ];
+        /* Horas tomadas - consulta */
         $taken = Cita::select('hour_taken')
             ->where('date_taken', $fes)
             ->get();
+        /* Conversion JSON a array */
+        $jsona = json_decode($taken);
 
-        $jsonp = json_decode($taken);
-        $hours = [
-            '10:00:00',
-            "11:00:00",
-            "12:00:00", //*
-            "13:00:00",
-            "14:00:00",
-            "14:30:00", //*
-            "15:00:00"  //*
-        ];
-        /* $dis = array_diff($p, $jsonp); */
-        /*
+        if (empty($jsona)) {
+            $dato = 'nada';
+            return array($hours, $dato);
+        } else {
 
-        /* foreach ($hours as $h) {
-            print $h;
-        } */
-        /* print_r($hours);
-        print_r($jsonp); */
-
-        /* print_r($dis); */
-
-
-        foreach ($jsonp as $s) {
-            $p[] = $s->hour_taken;
+            $dato = 'si hay';
+            /* Conversion del array */
+            foreach ($jsona as $s) {
+                $p[] = $s->hour_taken;
+            }
+            /*
+            Comparacion entre arrays para saber cuales estan en el array 1
+            contra los del array 2 y mostrar los que falten en el array 1
+            */
+            $dis = array_diff($hours, $p);
+            return array($dis, $dato);
         }
-        print_r($hours);
-        print_r($p);
-        $dis = array_diff($hours, $p);
-        print_r($dis);
-
-        /*
-
-        Array ( [0] => 10:00
-                [1] => 11:00
-                [2] => 12:00
-                [3] => 13:00
-                [4] => 14:00
-                [5] => 14:30
-                [6] => 15:00 )
-
-        Array ( [0] => 10:00:00
-                [1] => 12:00:00
-                [2] => 14:30:00
-                [3] => 15:00:00 )
-
-        Array ( [0] => 10:00
-                [1] => 11:00
-                [2] => 12:00
-                [3] => 13:00
-                [4] => 14:00
-                [5] => 14:30
-                [6] => 15:00 )
-        */
-
-        /*
-            Array ( [0] => 10:00:00
-                    [1] => 11:00:00
-                    [2] => 12:00:00
-                    [3] => 13:00:00
-                    [4] => 14:00:00
-                    [5] => 14:30:00
-                    [6] => 15:00:00 )
-            Array ( [0] => 10:00:00
-                    [1] => 12:00:00
-                    [2] => 14:30:00
-                    [3] => 15:00:00 )
-            Array ( [1] => 11:00:00
-                    [3] => 13:00:00
-                    [4] => 14:00:00 )
-        */
     }
 }
