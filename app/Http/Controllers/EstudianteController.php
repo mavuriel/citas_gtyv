@@ -18,13 +18,29 @@ class EstudianteController extends Controller
         $fes = $req->fecha;
         /* Envio el dato a otra funcion para obtener las horas disponibles */
         $res = $this->search($fes);
+        $h = $res[0];
 
         if ($res[1] == 'nada') {
-            echo 'Se enviran todas las horas disponibles';
         } else {
-            echo 'Se enviaran las horas que no estan ocupadas';
         }
-        return view('estudiante.formestudiante', compact('res'));
+
+        switch ($res[1]) {
+            case 0:
+                /* No hay horas ese dia */
+                return back()->with('no_hour', 'No hay horas disponibles, comprueba otra fecha');
+                break;
+            case 1:
+                /* Todas las horas libres*/
+                return view('estudiante.formestudiante', compact('h', 'fes'));
+                break;
+            case 2:
+                /* Algunas horas libres*/
+                return view('estudiante.formestudiante', compact('h', 'fes'));
+                break;
+            default:
+
+                break;
+        }
     }
 
     public function store(Request $req)
@@ -65,23 +81,33 @@ class EstudianteController extends Controller
             ->get();
         /* Conversion JSON a array */
         $jsona = json_decode($taken);
-
-        if (empty($jsona)) {
-            $dato = 'nada';
-            return array($hours, $dato);
+        /* Cuenta el numero de horas tomadas */
+        $c = count($jsona);
+        /* Si todas la horas estan tomadas (no hay ninguna libre) */
+        if ($c == 6) {
+            $dato = 0;
+            $r = '';
+            return array($r, $dato);
+            /* Si hay horas disponibles */
         } else {
-
-            $dato = 'si hay';
-            /* Conversion del array */
-            foreach ($jsona as $s) {
-                $p[] = $s->hour_taken;
+            /* Si no hay ninguna hora tomada (todas las horas libres) */
+            if (empty($jsona)) {
+                $dato = 1;
+                return array($hours, $dato);
+                /* Si hay al menos una hora tomada pero aun hay horas disponibles */
+            } else {
+                $dato = 2;
+                /* Conversion del array */
+                foreach ($jsona as $s) {
+                    $p[] = $s->hour_taken;
+                }
+                /*
+                Comparacion entre arrays para saber cuales estan en el array 1
+                contra los del array 2 y mostrar los que falten en el array 1
+                */
+                $dis = array_diff($hours, $p);
+                return array($dis, $dato);
             }
-            /*
-            Comparacion entre arrays para saber cuales estan en el array 1
-            contra los del array 2 y mostrar los que falten en el array 1
-            */
-            $dis = array_diff($hours, $p);
-            return array($dis, $dato);
         }
     }
 }

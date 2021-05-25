@@ -18,6 +18,7 @@
 
 <form id="form" action="{{route('store.estudiante')}}" method="POST">
     @csrf
+    <br>
     <label for="cite">Tipo de cita</label>
     <select id="cite" name="cita">
         <option value="" selected>Selecciona una opcion</option>
@@ -37,8 +38,7 @@
     <label for="hour">Horas disponibles</label>
     <select id="hour" name="hora">
         <option value="" selected>Selecciona una hora</option>
-        {{-- TODO: mostrar los datos de acuerdo a la posicion 2 del array --}}
-        @foreach ($msn as $p)
+        @foreach ($h as $p)
         <option value="{{$p}}">{{$p}}</option>
         @endforeach
     </select>
