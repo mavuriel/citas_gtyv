@@ -34,7 +34,7 @@
 
 @endsection
 
-@section('scripts')
+@section('script-body')
 var $input = $('.datepicker').pickadate
 ({
 disable: [1,7],
