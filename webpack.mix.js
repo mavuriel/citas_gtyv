@@ -17,6 +17,15 @@ mix.js('resources/js/app.js', 'public/js')
         require('tailwindcss'),
     ]);
 
+/* Jquery file */
+mix.copy('node_modules/jquery/dist/jquery.js', 'public/js');
+/* Date picker files */
+mix.copy('node_modules/pickadate/lib/picker.js','public/js');
+mix.copy('node_modules/pickadate/lib/picker.date.js','public/js');
+mix.copy('node_modules/pickadate/lib/themes/default.css','public/css');
+mix.copy('node_modules/pickadate/lib/themes/default.date.css','public/css');
+mix.copy('node_modules/pickadate/lib/translations/es_ES.js','public/js');
+
 if (mix.inProduction()) {
     mix.version();
 }

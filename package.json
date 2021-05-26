@@ -20,5 +20,9 @@
         "postcss": "^8.2.14",
         "postcss-import": "^14.0.1",
         "tailwindcss": "^2.1.2"
+    },
+    "dependencies": {
+        "jquery": "^3.6.0",
+        "pickadate": "^3.6.4"
     }
 }

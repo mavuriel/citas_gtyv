@@ -1,4 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/js/jquery.js": "/js/jquery.js",
+    "/js/picker.js": "/js/picker.js",
+    "/js/picker.date.js": "/js/picker.date.js",
+    "/css/default.css": "/css/default.css",
+    "/css/default.date.css": "/css/default.date.css",
+    "/js/es_ES.js": "/js/es_ES.js"
 }

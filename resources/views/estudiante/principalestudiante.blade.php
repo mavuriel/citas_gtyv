@@ -2,6 +2,15 @@
 
 @section('title','Pagina principal')
 
+@section('opt_dep')
+<script src="/js/jquery.js"></script>
+<link href="/css/default.css" rel="stylesheet">
+<link href="/css/default.date.css" rel="stylesheet">
+<script src="/js/picker.js"></script>
+<script src="/js/picker.date.js"></script>
+<script src="/js/es_ES.js"></script>
+@endsection
+
 @section('content')
 <h1>Gestion Tecnologica y Vinculacion</h1>
 <h2>Hola, por favor verifica tu informacion personal</h2>
@@ -14,12 +23,23 @@
 </div>
 @endif
 <br>
-<form method="POST" action="{{route('cita.estudiante')}}">
+
+<form id="form" action="{{route('cita.estudiante')}}" method="POST">
     @csrf
     <label for=" date">¿Que dia quieres tu cita?</label>
-    <input id="date" type="date" name="fecha">
-
-    <input type="submit" value="Buscar">
+    <br>
+    <input id="fecha" class="datepicker" autocomplete="off" placeholder="Selecciona una fecha" name="fecha">
+    <input id="buscar" type="submit" value="Buscar">
 </form>
 
+@endsection
+
+@section('scripts')
+var $input = $('.datepicker').pickadate
+({
+disable: [1,7],
+min:true,
+max: 30,
+format: 'yyyy-mm-dd'
+})
 @endsection

@@ -13,24 +13,6 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
-            transitionDuration: {
-
-                '0': '0ms',
-                '0.3' : '300ms',
-                '2000': '2000ms',
-            },
-
-            width: {
-
-                'w-mid': '50vw',
-
-            },
-
-            height: {
-
-                h-mid: '50vh',
-
-            },
 
         },
     },
