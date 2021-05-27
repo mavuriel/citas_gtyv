@@ -35,7 +35,7 @@
 @endsection
 
 @section('script-body')
-var $input = $('.datepicker').pickadate
+var $input = $('#fecha').pickadate
 ({
 disable: [1,7],
 min:true,
