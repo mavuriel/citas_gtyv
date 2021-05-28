@@ -13,10 +13,16 @@
     <link rel="mask-icon" href="{{asset('assets/favicon/safari-pinned-tab.svg')}}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#00a300">
     <meta name="theme-color" content="#ffffff">
+    <title>@yield('title')</title>
     {{-- Tailwind CSS --}}
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('opt_dep')
-    <title>@yield('title')</title>
+
+    <style>
+        @yield('opt-style')
+    </style>
+
 </head>
 
 <body>
@@ -25,9 +31,7 @@
         @yield('head')
     </head>
 
-    <main>
-        @yield('content')
-    </main>
+    @yield('content')
 
     <footer>
         @yield('footer')

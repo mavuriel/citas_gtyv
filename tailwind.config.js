@@ -9,6 +9,21 @@ module.exports = {
     ],
 
     theme: {
+
+        minHeight: {
+            '0': '0',
+            '15':'15.5vh',
+            '1/4': '25vh',
+            '1/2': '50vh',
+            '3/4': '75vh',
+            '85' : '85vh',
+            'full': '100vh',
+        },
+
+        container: {
+            center: true,
+        },
+
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
