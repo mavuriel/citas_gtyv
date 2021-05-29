@@ -15,21 +15,19 @@
     <meta name="theme-color" content="#ffffff">
     <title>@yield('title')</title>
     {{-- Tailwind CSS --}}
-
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('opt_dep')
-
-    <style>
-        @yield('opt-style')
+    <style type="text/css">
+        @yield('opt-style');
     </style>
 
 </head>
 
 <body>
 
-    <head>
-        @yield('head')
-    </head>
+    <header>
+        @yield('header')
+    </header>
 
     @yield('content')
 
@@ -41,6 +39,7 @@
         @yield('script-body')
     </script>
 
+    @yield('others')
 </body>
 
 </html>
