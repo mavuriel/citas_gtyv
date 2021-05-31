@@ -1,43 +1,28 @@
-@extends('layouts.plantilla')
+@extends('layouts.app')
 
 @section('title','GTyV')
-
-@section('opt-style')
-.map{
-height: 300px;
-width: 100%;
-}
-@endsection
 
 @section('opt_dep')
 {{-- Map script main --}}
 <script src="{{asset('js/map.js')}}" defer></script>
 @endsection
 
-@section('header')
-<nav class="bg-blue-900 min-h-10 py-4">
-    <ul class="grid grid-cols-4 ">
-        <li class="bg-logo bg-center bg-auto bg-no-repeat"></li>
-        <li>TecNM campus Veracruz</li>
-        <li>incia sesion</li>
-        <li>registrate</li>
-    </ul>
-</nav>
-@endsection
-
 @section('content')
-
+{{--TODO: modificar la barra de navegacion con otros colores y falta el logo del tec
+    --}}
 {{-- TODO: editar la foto para tamaño pequeño ya que se ve mal
     -revisalo cuando lo cambies- --}}
-<div class="bg-tec min-h-1/2 bg-center bg-cover">
-    <main class="container grid gap-y-4 ">
-        <div class="bg-red-400 ">
-            <h2>Gestion Tecnologica y Vinculacion</h2>
+<div class="bgtec md:min-h-1/2 ">
+    <main class="mainsm ">
+        <div class=" row-start-2 ">
+            <h1 class="tltg ">
+                Gestión Tecnológica y Vinculación
+            </h1>
         </div>
-        <div class="bg-red-400">
-            <a href="https://www.google.com">Agenda tu cita</a>
+        <div class="ordcite ">
+            <a href="{{route('inicio.estudiante')}}" class="btncite ">Agenda tu cita</a>
         </div>
-        <div class="bg-red-400 ">
+        <div class="tbhr ">
             <table>
                 <caption>Horario de atención</caption>
                 <tr>
@@ -53,23 +38,35 @@ width: 100%;
 @endsection
 
 @section('footer')
-<div class="bg-grayF min-h-40">
-    <div class="container grid grid-cols-1 md:grid-cols-4 gap-2 ">
-        <div class="bg-white md:col-span-2 ">
-            <address>
-                Tecnológico Nacional de México campus Veracruz <br>
-                Calz. Miguel Angel de Quevedo 2779 <br>
-                Col. Formando Hogar, Veracruz, Ver. MEXICO CP 91897 <br>
-                Falta numero y correo de gestion
+<div class="bg-grayF min-h-1/4">
+    <div class="ftcont md:grid-cols-4 ">
+        <div class="addrcont md:col-span-2 ">
+            {{-- <address class="font-serif leading-tight text-lg  text-white text-opacity-75 p-2">
+                Tecnológico Nacional de México <br>
+                Campus Veracruz <br>
+                Calz. Miguel Ángel de Quevedo 2779 <br>
+                Col. Formando Hogar, Veracruz, Ver. <br>
+                MÉXICO CP 91897 <br>
+            </address> --}}
+            <address class="addr">
+                Tecnológico Nacional de México
+                | Campus Veracruz
+                | Calz. Miguel Ángel de Quevedo 2779
+                | Col. Formando Hogar, Veracruz, Ver.
+                | MÉXICO CP 91897
             </address>
         </div>
-        <div id="map" class="map md:col-span-2 ">
+        <div id="map" class="map md:w-full md:col-span-2 md:mt-2 ">
         </div>
-        <div class="bg-white md:col-span-4 ">
-            <p>Aqui van las redes sociales</p>
+        <div class="social md:w-full mx-2 md:col-span-4 ">
+            <p>Comunícate con nosotros</p>
         </div>
-        <div class="bg-white md:col-span-4 ">
-            <p>Aqui va mi link de github</p>
+        <div class="social mx-2 md:w-full md:col-span-4 ">
+            <a href="https://www.facebook.com/ITVRP"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:residenciasprofesionales@itver.edu.mx"><i class="fas fa-at"></i></a>
+        </div>
+        <div class="info w-auto md:w-full md:col-span-4 ">
+            <p>Hecho en México por <a href="https://github.com/mavuriel"><i class="fab fa-github"></i></a></p>
         </div>
     </div>
 </div>

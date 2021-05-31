@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{-- Tailwind CSS --}}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- Fontawesome --}}
+    <script src="https://kit.fontawesome.com/be43174b2c.js" crossorigin="anonymous"></script>
     {{-- Favicon --}}
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/favicon/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/favicon/favicon-32x32.png')}}">
@@ -14,13 +18,10 @@
     <meta name="msapplication-TileColor" content="#00a300">
     <meta name="theme-color" content="#ffffff">
     <title>@yield('title')</title>
-    {{-- Tailwind CSS --}}
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @yield('opt_dep')
     <style type="text/css">
         @yield('opt-style');
     </style>
-
+    @yield('opt_dep')
 </head>
 
 <body>

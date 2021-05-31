@@ -1,3 +1,51 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.bgtec {
+    @apply bg-tec min-h-91 bg-left-bottom bg-cover;
+}
+
+.mainsm {
+    @apply container grid grid-rows-5 gap-1;
+}
+
+.tltg {
+    @apply text-white text-2xl font-medium p-1 mx-12 text-center tracking-wider break-words;
+}
+
+.ordcite {
+    @apply row-start-3 justify-self-center flex flex-wrap content-center;
+}
+
+.btncite {
+    @apply bg-bluet text-white text-xl rounded-full py-3 px-6 hover:ring-4 hover:ring-blue-400 hover:ring-offset-0 hover:ring-opacity-75 active:bg-blue-500;
+}
+
+.tbhr {
+    @apply text-white font-light row-start-5 rounded-lg text-lg justify-self-center text-center;
+}
+
+.ftcont {
+    @apply container grid grid-cols-1 gap-2;
+}
+
+.addrcont {
+    @apply mx-2 mt-2;
+}
+
+.addr {
+    @apply font-sans break-words text-xs leading-tight uppercase  text-white text-opacity-75 p-2;
+}
+
+.map {
+    @apply w-auto h-60 mx-2;
+}
+
+.social {
+    @apply font-mono text-sm text-center text-white w-auto;
+}
+
+.info {
+    @apply font-mono text-xs text-center font-thin text-white text-opacity-20 mx-2 mb-2;
+}

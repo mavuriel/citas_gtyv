@@ -16,12 +16,12 @@ use App\Http\Controllers\AdmController;
 */
 
 /* Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 }); */
 
-/* Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard'); */
+})->name('dashboard');
 
 //Pagina principal
 Route::get('/', HomeController::class);

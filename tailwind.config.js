@@ -26,6 +26,11 @@ module.exports = {
                 DEFAULT: '#282424',
                 dark: '#282424',
             },
+            bluet:{
+                light: '#204474',
+                DEFAULT: '#204474',
+                dark: '#204474',
+            },
 
             white: {
                 light: '#FFFFFF',
@@ -34,6 +39,12 @@ module.exports = {
             },
         },
 
+        width: {
+            'auto':'auto',
+            'full':'100%',
+            '1/7': '14.2857143%',
+        }
+        ,
         minHeight: {
             '0': '0',
             '10': '10vh',
@@ -42,8 +53,13 @@ module.exports = {
             '1/3': '33.3vh',
             '40':'40vh',
             '1/2': '50vh',
+            '70' : '70vh',
+            '72' : '72vh',
             '3/4': '75vh',
             '85' : '85vh',
+            '87' : '87vh',
+            '90' : '90vh',
+            '91' : '91vh',
             'full': '100vh',
         },
 
@@ -56,7 +72,7 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
             backgroundImage: theme => ({
-                'tec':"url('/assets/img/frente.webp')",
+                'tec':"url('/assets/img/frentesm.webp')",
                 'logo':"url('/assets/img/logov2.webp')",
             }),
 
@@ -65,7 +81,12 @@ module.exports = {
 
     variants: {
         extend: {
+            backgroundColor: ['hover','active'],
             opacity: ['disabled'],
+            ringWidth: ['hover', 'active'],
+            ringColor: ['hover', 'active'],
+            ringOffsetWidth: ['hover', 'active'],
+            ringOpacity: ['hover', 'active'],
         },
     },
 
