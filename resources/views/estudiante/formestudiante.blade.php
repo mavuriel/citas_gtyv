@@ -6,6 +6,7 @@
 
 {{-- TODO: buscar como hacer que no modifiquen el codigo HTML en el navegador y puedan enviar lo que quieran xD --}}
 <main class="container mx-auto min-h-91 flex flex-col justify-center items-center  bg-gray-200 space-y-0">
+    {{-- Card --}}
     <div class="bg-white rounded-t-lg shadow-2xl border-solid border border-black mx-6 p-4">
         <h1 class="text-center text-2xl my-4">Agenda tu cita</h1>
         <form id="form" action="{{route('store.estudiante')}}" method="POST">
@@ -41,13 +42,12 @@
                 class="border-0 border-b-2 border-gray-400 min-w-full placeholder-gray-400 focus:border-blue-600 focus:outline-none focus:ring-0"
                 type="text" name="control" placeholder="p. ej. E18029599"
                 pattern="[E]([1][0-9]|[2][0-1])([0][1]|[0][2])\d{4}" required>
-
     </div>
+    {{-- Boton --}}
     <div class="min-w-full px-6">
         <input class="text-white rounded-b-lg bg-bluet shadow-lg min-w-full px-28 py-2" type="submit"
             value="Guardar cita">
     </div>
-
     </form>
 </main>
 

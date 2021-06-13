@@ -3,8 +3,14 @@
 @section('title','Registros')
 
 @section('content')
+{{-- TODO: mejorar las notificaciones para que desaparezcan --}}
+@if(Session::has('del_item'))
+<div
+    class="font-mono text-center text-yellow-600 bg-yellow-400 bg-opacity-40   m-6 p-4 border border-yellow-600 rounded-md leading-tight transition duration-300 ">
+    <p>{{Session::get('del_item')}}</p>
+</div>
+@endif
 <main class="container mx-auto min-h-80 grid grid-rows-1 items-center bg-gray-200">
-
     {{-- Modo movil --}}
     <div class="md:hidden grid grid-flow-row gap-2 mx-4 min-h-full ">
         <div class=" flex items-center justify-center">
@@ -22,7 +28,7 @@
                     <td class="font-mono w-1/3 py-1">
                         <p class="mx-5">{{$cita -> n_control}}</p>
                     </td>
-                    {{-- Boton mas detalles --}}
+                    {{-- Boton detalles --}}
                     <td class="justify-center">
                         <a class="bg-blue-600 ring-blue-500 active:bg-blue-500 active:ring-blue-700 rounded-full ring-2  ring-opacity-50 py-1 px-5 text-white"
                             href="{{route('log.id', $cita-> id)}}">
@@ -59,7 +65,7 @@
                     {{-- Boton eliminar --}}
                     <td class="w-20">
                         <a class="bg-red-700 ring-red-500 active:bg-red-500 active:ring-red-700 text-white ring-2 ring-opacity-50 rounded-full py-1 px-4 place-self-center"
-                            href="#">
+                            href="{{route('log.del',$cita-> id)}}">
                             <i class="far fa-trash-alt"></i>
                         </a>
                     </td>

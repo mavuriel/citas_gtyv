@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
     {{-- Fontawesome --}}
     <script src="https://kit.fontawesome.com/be43174b2c.js" crossorigin="anonymous"></script>
     {{-- Favicon --}}
@@ -18,9 +21,6 @@
     <meta name="theme-color" content="#ffffff">
 
     <title>@yield('title')</title>
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <style type="text/css">
         @yield('opt-style');

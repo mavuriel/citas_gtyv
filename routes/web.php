@@ -43,3 +43,5 @@ Route::get('/registros', [AdmController::class, 'index'])->name('log.citas');
 Route::get('/registro/{id}', [AdmController::class, 'searchID'])->name('log.id');
 
 Route::get('/registro/editar/{id}', [AdmController::class, 'editID'])->name('log.edit');
+
+Route::get('/del/{id}', [AdmController::class, 'deleteID'])->name('log.del');

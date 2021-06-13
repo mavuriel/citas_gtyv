@@ -29,5 +29,8 @@ class AdmController extends Controller
 
     public function deleteID($id)
     {
+        $info = Cita::find($id)->delete();
+
+        return back()->with('del_item', 'Cita eliminada');
     }
 }
