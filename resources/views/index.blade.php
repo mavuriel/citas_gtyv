@@ -8,21 +8,18 @@
 @endsection
 
 @section('content')
-{{--TODO: modificar la barra de navegacion con otros colores y falta el logo del tec
-    --}}
-{{-- TODO: editar la foto para tamaño pequeño ya que se ve mal
-    -revisalo cuando lo cambies- --}}
-<div class="bgtec md:min-h-1/2 ">
-    <main class="mainsm ">
-        <div class=" row-start-2 ">
-            <h1 class="tltg ">
+<div class="bgtec md:min-h-82 lg:bg-left lg:min-h-93 ">
+    <main class="mainsm lg:grid-rows-6 ">
+        {{-- TODO: Ver el video layout para cambiarlo si no dejalo asi --}}
+        <div class="relative filter blur bg-transparent row-start-2 ">
+            <h1 class="tltg absolute lg:text-5xl lg:uppercase lg:tracking-widest">
                 Gestión Tecnológica y Vinculación
             </h1>
         </div>
-        <div class="ordcite ">
+        <div class="ordcite lg:row-start-4">
             <a href="{{route('inicio.estudiante')}}" class="btncite ">Agenda tu cita</a>
         </div>
-        <div class="tbhr ">
+        <div class="tbhr lg:row-start-6">
             <table>
                 <caption>Horario de atención</caption>
                 <tr>
@@ -39,16 +36,9 @@
 
 @section('footer')
 <div class="bg-grayF min-h-1/4">
-    <div class="ftcont md:grid-cols-4 ">
-        <div class="addrcont md:col-span-2 ">
-            {{-- <address class="font-serif leading-tight text-lg  text-white text-opacity-75 p-2">
-                Tecnológico Nacional de México <br>
-                Campus Veracruz <br>
-                Calz. Miguel Ángel de Quevedo 2779 <br>
-                Col. Formando Hogar, Veracruz, Ver. <br>
-                MÉXICO CP 91897 <br>
-            </address> --}}
-            <address class="addr">
+    <div class="ftcont lg:grid-rows-1 ">
+        <div class="addrcont lg:col-span-2 ">
+            <address class="addr md:mx-12 md:tracking-wider md:text-center lg:mx-0">
                 Tecnológico Nacional de México
                 | Campus Veracruz
                 | Calz. Miguel Ángel de Quevedo 2779
@@ -56,16 +46,16 @@
                 | MÉXICO CP 91897
             </address>
         </div>
-        <div id="map" class="map md:w-full md:col-span-2 md:mt-2 ">
+        <div id="map" class="map lg:w-full lg:col-span-2 lg:mt-2 ">
         </div>
-        <div class="social md:w-full mx-2 md:col-span-4 ">
+        <div class="social lg:w-full lg:col-span-2 ">
             <p>Comunícate con nosotros</p>
         </div>
-        <div class="social mx-2 md:w-full md:col-span-4 ">
+        <div class="social lg:w-full lg:col-span-2 ">
             <a href="https://www.facebook.com/ITVRP"><i class="fab fa-facebook"></i></a>
             <a href="mailto:residenciasprofesionales@itver.edu.mx"><i class="fas fa-at"></i></a>
         </div>
-        <div class="info w-auto md:w-full md:col-span-4 ">
+        <div class="info w-auto lg:w-full lg:col-span-2 ">
             <p>Hecho en México por <a href="https://github.com/mavuriel"><i class="fab fa-github"></i></a></p>
         </div>
     </div>

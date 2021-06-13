@@ -17,12 +17,11 @@ class EstudianteController extends Controller
         /* Obtencion de la fecha en la vista estudiante */
         $fes = $req->fecha;
         /* Envio el dato a otra funcion para obtener las horas disponibles */
-        $res = $this->search($fes);
+        $res = $this->searchHour($fes);
+        /* Arreglo res contiene dos parametros:
+            [0] -> contiene las horas disponibles
+            [1] -> contiene el dato de verificacion para el switch */
         $h = $res[0];
-
-        if ($res[1] == 'nada') {
-        } else {
-        }
 
         switch ($res[1]) {
             case 0:
@@ -64,7 +63,7 @@ class EstudianteController extends Controller
         return view('estudiante.citasestudiante', compact('cita'));
     }
 
-    public function search($fes)
+    public function searchHour($fes)
     {
         /* Horas disponibles */
         $hours = [

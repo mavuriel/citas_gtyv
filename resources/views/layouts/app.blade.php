@@ -34,13 +34,13 @@
     @yield('opt_dep')
 </head>
 
-<body class="font-sans antialiased">
+<body class="font-sans">
     <x-jet-banner />{{-- No se que es XD --}}
 
     <header>
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-10 bg-gray-200">
             {{-- Componente de livewire ubicado en carpeta de views
-                - archivo navigation-menu --}}
+                - archivo navigation-menu.blade.php --}}
             @livewire('navigation-menu')
         </div>
     </header>

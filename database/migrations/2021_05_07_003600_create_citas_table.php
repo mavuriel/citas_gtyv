@@ -20,7 +20,7 @@ class CreateCitasTable extends Migration
             $table->time('hour_taken'); //Hora tomada
             $table->char('n_control', 50); //Numero de control
             $table->string('name', 100); //Nombre del alumno
-            $table->string('asigned_to'); //Asignado a
+            $table->string('asigned_to'); //QUITALO CUANDO REHAGAS LA BASE DE DATOS
             $table->timestamps(); //create at - update at
         });
     }

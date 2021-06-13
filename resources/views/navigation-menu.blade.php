@@ -14,17 +14,17 @@ $nav_links = [
 @endphp
 
 {{-- Todo esto es renderizado desde app.blade.php en la orden de @livewire('navigation-menu') --}}
-<nav x-data="{ open: false }" class="bg-bluet border-b border-gray-500 shadow">
+<nav x-data="{ open: false }" class="bg-bluet border-b border-gray-800 shadow">
     <!-- Primary Navigation Menu -->
     {{-- Barra de navegacion en vista de escritorio --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
+                <div class="flex-shrink-0 flex items-center ">
                     <a href="{{ route('dashboard') }}">
                         {{-- Componente de jet ubicado en vendor/laravel/jetstream/resources/components/aplication-mark.blade.php --}}
-                        <x-jet-application-mark class="block h-9 w-auto" />
+                        <x-jet-application-mark class="block" />
                         {{-- LOGO class="bg-logo bg-center bg-auto bg-no-repeat" --}}
                     </a>
                 </div>
@@ -32,11 +32,13 @@ $nav_links = [
                 {{-- Links de la barra de navegacion de escritorio --}}
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     {{-- Ciclo para crear diferentes links en la barra usando el array del principio --}}
+                    @auth
                     @foreach ($nav_links as $n )
                     <x-jet-nav-link href="{{ $n['route'] }}" :active="$n['active']">
                         {{ $n['name'] }}
                     </x-jet-nav-link>
                     @endforeach
+                    @endauth
                     {{-- ubicacion del archivo original en vendor/laravel/jetstream/resources/components/nav-link.blade.php --}}
                 </div>
             </div>
@@ -104,8 +106,8 @@ $nav_links = [
                         </x-slot>
                     </x-jet-dropdown>
                     @else
-                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                    <a href="{{ route('login') }}" class="text-sm text-white hover:underline">Inicia sesión</a>
+                    <a href="{{ route('register') }}" class="ml-4 text-sm text-white hover:underline">Registrate</a>
                     @endauth
                 </div>
             </div>
@@ -131,11 +133,13 @@ $nav_links = [
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             {{-- Ciclo para crear diferentes links en la barra usando el array del principio --}}
+            @auth
             @foreach ($nav_links as $n )
             <x-jet-responsive-nav-link href="{{ $n['route'] }}" :active="$n['active']">
                 {{ $n['name'] }}
             </x-jet-responsive-nav-link>
             @endforeach
+            @endauth
         </div>
 
         <!-- Responsive Settings Options -->

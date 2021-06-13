@@ -10,7 +10,6 @@ module.exports = {
     ],
 
     theme: {
-
         colors:{
             // Build your palette here
             transparent: 'transparent',
@@ -43,10 +42,17 @@ module.exports = {
             'auto':'auto',
             'full':'100%',
             '1/7': '14.2857143%',
+            '1/3': '33.333333%',
+            '20':'20%',
+            '30':'30%',
+            '50':'50%',
+            '2': '2rem'
         }
         ,
         minHeight: {
             '0': '0',
+            '5': '5vh',
+            '8':'8vh',
             '10': '10vh',
             '15':'15vh',
             '1/4': '25vh',
@@ -56,11 +62,18 @@ module.exports = {
             '70' : '70vh',
             '72' : '72vh',
             '3/4': '75vh',
+            '77' : '77vh',
+            '80' : '80vh',
+            '82' : '82vh',
             '85' : '85vh',
             '87' : '87vh',
             '90' : '90vh',
             '91' : '91vh',
-            'full': '100vh',
+            '91/2':'91.25vh',
+            '92' : '92vh',
+            '93' : '93vh',
+            'screen': '100vh',
+            'full': '100%'
         },
 
         container: {
