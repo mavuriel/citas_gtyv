@@ -32,6 +32,8 @@ Route::get('/estudiante', [EstudianteController::class, 'index'])->name('inicio.
 Route::post('/cita', [EstudianteController::class, 'create'])->name('cita.estudiante');
 //Recibe informacion del formulario
 Route::post('/cita/guardar', [EstudianteController::class, 'store'])->name('store.estudiante');
+//Actualizar cita
+Route::post('/cita/actualizar/{id}', [EstudianteController::class, 'update'])->name('update.estudiante');
 //Citas estudiante
 Route::get('/miscitas/{cita}', [EstudianteController::class, 'show'])->name('show.estudiante');
 //Mostrar informacion personal
@@ -44,4 +46,4 @@ Route::get('/registro/{id}', [AdmController::class, 'searchID'])->name('log.id')
 
 Route::get('/registro/editar/{id}', [AdmController::class, 'editID'])->name('log.edit');
 
-Route::get('/del/{id}', [AdmController::class, 'deleteID'])->name('log.del');
+Route::get('/registro/eliminar/{id}', [AdmController::class, 'deleteID'])->name('log.del');

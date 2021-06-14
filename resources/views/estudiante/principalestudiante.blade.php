@@ -32,6 +32,7 @@
         </div>
     </div>
     <div>
+        {{-- TODO: modificar para que desaparezca --}}
         @if(Session::has('no_hour'))
         <div
             class="font-mono text-center text-yellow-600 bg-yellow-400 bg-opacity-40   m-6 p-4 border border-yellow-600 rounded-md leading-tight">

@@ -5,6 +5,7 @@
 @section('content')
 
 {{-- TODO: buscar como hacer que no modifiquen el codigo HTML en el navegador y puedan enviar lo que quieran xD --}}
+{{-- TODO:  validar datos mediante php --}}
 <main class="container mx-auto min-h-91 flex flex-col justify-center items-center  bg-gray-200 space-y-0">
     {{-- Card --}}
     <div class="bg-white rounded-t-lg shadow-2xl border-solid border border-black mx-6 p-4">

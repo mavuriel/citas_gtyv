@@ -39,8 +39,8 @@
 
     <header>
         <div class="min-h-10 bg-gray-200">
-            {{-- Componente de livewire ubicado en carpeta de views
-                - archivo navigation-menu.blade.php --}}
+            {{-- Componente de livewire ubicado en:
+                resources/views/navigation-menu.blade.php --}}
             @livewire('navigation-menu')
         </div>
     </header>

@@ -112,5 +112,7 @@
 @endsection
 
 @section('footer')
+{{-- Ubicacion del archivo para la modificacion de estilos de la barra paginacion:
+    resources/views/vendor/pagination/tailwind.blade.php--}}
 {{ $citas->links() }}
 @endsection

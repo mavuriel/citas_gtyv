@@ -57,6 +57,22 @@ class EstudianteController extends Controller
         return redirect()->route('show.estudiante', $cita->n_control);
     }
 
+    public function update(Request $req, $id)
+    {
+        $cita = new Cita();
+        $cita = Cita::find($id);
+
+        $cita->name = $req->nombrea;
+        $cita->n_control = $req->ncontrola;
+        $cita->date_taken = $req->afecha;
+        $cita->hour_taken = $req->ahora;
+        $cita->service = $req->servicea;
+
+        $cita->save();
+
+        return back()->with('dato_act', 'Dato actualizado correctamente');
+    }
+
     public function show($cita)
     {
         //TODO: corregir error de seguridad, si alguien pone otro n. control entrara a otro registro

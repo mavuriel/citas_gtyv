@@ -49,3 +49,38 @@
 .info {
     @apply font-mono text-xs text-center font-thin text-white text-opacity-20 mx-2 mb-2;
 }
+
+/* Card detalles */
+.contcard {
+    @apply container mx-auto bg-gray-300 min-h-screen flex flex-col justify-center items-center text-center space-y-0 p-14 font-sans;
+}
+
+.h1card {
+    @apply rounded-t-lg bg-bluet min-w-full py-2 text-white-light shadow-2xl text-2xl;
+}
+
+.bodycard {
+    @apply bg-white min-w-full p-4 shadow-2xl;
+}
+
+.datacard {
+    @apply font-mono font-light tracking-wide;
+}
+
+.returnbtn {
+    @apply bg-bluet rounded-b-lg min-w-full py-2 text-white active:bg-blue-600 shadow-2xl;
+}
+
+/* Card con doble boton abajo */
+
+.contbtns {
+    @apply inline-flex min-w-full;
+}
+
+.btnleft {
+    @apply bg-bluet text-white active:bg-blue-700 min-w-1/2 py-2 rounded-bl-lg;
+}
+
+.btnright {
+    @apply bg-yellow-600 active:bg-yellow-500 text-white min-w-1/2 py-2 rounded-br-lg;
+}
