@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 .bgtec {
-    @apply bg-tec min-h-91 bg-left-bottom bg-cover;
+    @apply bg-tec min-h-90 bg-left-bottom bg-cover;
 }
 
 .mainsm {
@@ -83,4 +83,12 @@
 
 .btnright {
     @apply bg-yellow-600 active:bg-yellow-500 text-white min-w-1/2 py-2 rounded-br-lg;
+}
+
+.mininput {
+    @apply min-w-full bg-white bg-opacity-50 border-0 border-b-2 border-gray-400 mb-4 text-center font-mono font-light tracking-wide;
+}
+
+.fontlabel {
+    @apply font-bold text-lg;
 }

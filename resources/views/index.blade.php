@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-<div class="bgtec md:min-h-82 lg:bg-left lg:min-h-93 ">
+<div class="bgtec lg:bg-left ">
     <main class="mainsm lg:grid-rows-6 ">
         {{-- TODO: Ver el video layout para cambiarlo si no dejalo asi --}}
         <div class="relative filter blur bg-transparent row-start-2 ">

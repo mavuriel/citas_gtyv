@@ -59,9 +59,14 @@ class EstudianteController extends Controller
 
     public function update(Request $req, $id)
     {
+        /*TODO: Jerarquia de validaciones
+            1. Datos vacios
+            2. Datos no modificados
+            3. Fecha/hora no disponible
+            4. Formato de datos */
+
         $cita = new Cita();
         $cita = Cita::find($id);
-
         $cita->name = $req->nombrea;
         $cita->n_control = $req->ncontrola;
         $cita->date_taken = $req->afecha;

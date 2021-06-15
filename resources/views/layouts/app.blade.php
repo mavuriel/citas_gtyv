@@ -35,14 +35,12 @@
 </head>
 
 <body class="font-sans">
-    <x-jet-banner />{{-- No se que es XD --}}
-
     <header>
-        <div class="min-h-10 bg-gray-200">
-            {{-- Componente de livewire ubicado en:
+        {{-- <div class="min-h-10 bg-gray-200"> --}}
+        {{-- Componente de livewire ubicado en:
                 resources/views/navigation-menu.blade.php --}}
-            @livewire('navigation-menu')
-        </div>
+        @livewire('navigation-menu')
+        {{-- </div> --}}
     </header>
 
     @yield('content')

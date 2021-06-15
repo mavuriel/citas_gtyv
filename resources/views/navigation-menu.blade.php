@@ -14,7 +14,7 @@ $nav_links = [
 @endphp
 
 {{-- Todo esto es renderizado desde app.blade.php en la orden de @livewire('navigation-menu') --}}
-<nav x-data="{ open: false }" class="bg-bluet border-b border-gray-800 shadow">
+<nav x-data="{ open: false }" class="bg-bluet border-b border-gray-800 shadow min-h-10 md:py-4">
     <!-- Primary Navigation Menu -->
     {{-- Barra de navegacion en vista de escritorio --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -130,7 +130,7 @@ $nav_links = [
 
     <!-- Responsive Navigation Menu -->
     {{-- Barra de navegacion de celular --}}
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden ">
         <div class="pt-2 pb-3 space-y-1">
             {{-- Ciclo para crear diferentes links en la barra usando el array del principio --}}
             @auth
