@@ -25561,8 +25561,16 @@ select {
   width: 30%;
 }
 
+.w-40 {
+  width: 40%;
+}
+
 .w-50 {
   width: 50%;
+}
+
+.w-60 {
+  width: 60%;
 }
 
 .w-auto {
@@ -30521,6 +30529,8 @@ select {
   --tw-text-opacity: 0.2;
 }
 
+/* Detalles y actualizar */
+
 /* Card detalles */
 
 .contcard {
@@ -30698,6 +30708,205 @@ select {
   font-weight: 700;
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+/* Principal estudiante */
+
+.contprin {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 640px) {
+  .contprin {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .contprin {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contprin {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .contprin {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .contprin {
+    max-width: 1536px;
+  }
+}
+
+.contprin {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  min-height: 90vh;
+  gap: 0.5rem;
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+}
+
+.h1mb {
+  font-weight: 500;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.card1mb {
+  --tw-bg-opacity: 1;
+  background-color: rgba(245, 245, 245, var(--tw-bg-opacity));
+  border-radius: 0.5rem;
+  border-width: 1px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  padding: 0.5rem;
+  --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  text-align: center;
+}
+
+.card1p {
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  line-height: 1.25;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.contbtncard1 {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 200;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-bottom: 0.25rem;
+  margin-top: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.btninfocard1 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(32, 68, 116, var(--tw-bg-opacity));
+}
+
+.btninfocard1:active {
+  --tw-bg-opacity: 1;
+  background-color: rgba(14, 165, 233, var(--tw-bg-opacity));
+}
+
+.btninfocard1 {
+  border-radius: 9999px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.btninfocard1:hover {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-offset-width: 0px;
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(56, 189, 248, var(--tw-ring-opacity));
+  --tw-ring-opacity: 0.75;
+}
+
+.card2mb {
+  --tw-bg-opacity: 1;
+  background-color: rgba(245, 245, 245, var(--tw-bg-opacity));
+  border-radius: 0.5rem;
+  border-width: 1px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  padding: 0.5rem;
+  --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  text-align: center;
+  grid-row-start: 4;
+}
+
+.warnnt {
+  --tw-bg-opacity: 1;
+  background-color: rgba(251, 191, 36, var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.4;
+  --tw-border-opacity: 1;
+  border-color: rgba(217, 119, 6, var(--tw-border-opacity));
+  border-radius: 0.375rem;
+  border-width: 1px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  line-height: 1.25;
+  margin: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(217, 119, 6, var(--tw-text-opacity));
+}
+
+.contcardbtn > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0px * var(--tw-space-x-reverse));
+  margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.contcardbtn {
+  display: flex;
+  justify-content: center;
+}
+
+.idatep {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(212, 212, 212, var(--tw-border-opacity));
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-width: 1px;
+  padding: 0.5rem;
+}
+
+.idatep::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(115, 115, 115, var(--tw-placeholder-opacity));
+  --tw-placeholder-opacity: 0.5;
+}
+
+.idatep:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(115, 115, 115, var(--tw-placeholder-opacity));
+  --tw-placeholder-opacity: 0.5;
+}
+
+.idatep::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(115, 115, 115, var(--tw-placeholder-opacity));
+  --tw-placeholder-opacity: 0.5;
+}
+
+.btnsearch {
+  --tw-bg-opacity: 1;
+  background-color: rgba(32, 68, 116, var(--tw-bg-opacity));
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
@@ -55534,8 +55743,16 @@ select {
     width: 30%;
   }
 
+  .sm\:w-40 {
+    width: 40%;
+  }
+
   .sm\:w-50 {
     width: 50%;
+  }
+
+  .sm\:w-60 {
+    width: 60%;
   }
 
   .sm\:w-auto {
@@ -84959,8 +85176,16 @@ select {
     width: 30%;
   }
 
+  .md\:w-40 {
+    width: 40%;
+  }
+
   .md\:w-50 {
     width: 50%;
+  }
+
+  .md\:w-60 {
+    width: 60%;
   }
 
   .md\:w-auto {
@@ -114384,8 +114609,16 @@ select {
     width: 30%;
   }
 
+  .lg\:w-40 {
+    width: 40%;
+  }
+
   .lg\:w-50 {
     width: 50%;
+  }
+
+  .lg\:w-60 {
+    width: 60%;
   }
 
   .lg\:w-auto {
@@ -143809,8 +144042,16 @@ select {
     width: 30%;
   }
 
+  .xl\:w-40 {
+    width: 40%;
+  }
+
   .xl\:w-50 {
     width: 50%;
+  }
+
+  .xl\:w-60 {
+    width: 60%;
   }
 
   .xl\:w-auto {
@@ -173234,8 +173475,16 @@ select {
     width: 30%;
   }
 
+  .\32xl\:w-40 {
+    width: 40%;
+  }
+
   .\32xl\:w-50 {
     width: 50%;
+  }
+
+  .\32xl\:w-60 {
+    width: 60%;
   }
 
   .\32xl\:w-auto {

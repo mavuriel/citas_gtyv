@@ -26,7 +26,7 @@ class EstudianteController extends Controller
         switch ($res[1]) {
             case 0:
                 /* No hay horas ese dia */
-                return back()->with('no_hour', 'No hay horas disponibles, comprueba otra fecha');
+                return back()->with('no_hour', 'No hay horas disponibles, comprueba otra fecha.');
                 break;
             case 1:
                 /* Todas las horas libres*/

@@ -13,47 +13,46 @@
 @endsection
 
 @section('content')
-
-<main class="bg-gray-300 container grid grid-rows-5 gap-2 justify-center items-center  min-h-90 font-sans">
-    <div class="text-center">
-        <h1 class="text-3xl font-medium tracking-wider mx-6 lg:uppercase">Gestión Tecnológica
-            <wbr>y Vinculación</h1>
-    </div>
-
-    {{-- Primer Card --}}
-    <div class="bg-gray-100 mx-6 p-2 rounded-lg border border-black shadow-2xl text-center lg:row-start-3">
-        <p class="mx-4 text-sm font-light leading-tight">Hola, por favor verifica tu información personal antes de
-            agendar tu cita.
-        </p>
-        <div class=" font-mono font-extralight text-white mt-2 mb-1 mx-12 ">
-            <a class=" bg-bluet rounded-full py-2 px-5 hover:ring-4 hover:ring-blue-400 hover:ring-offset-0 hover:ring-opacity-75 active:bg-blue-500"
-                href="https://www.google.com">Ver información</a>
+<div class="bg-gray-300">
+    <main class="contprin lg:grid-rows-6">
+        <div class="text-center">
+            <h1 class="h1mb lg:uppercase lg:font-bold">Gestión Tecnológica
+                <wbr>y Vinculación</h1>
         </div>
-    </div>
-    <div>
-        {{-- TODO: modificar para que desaparezca --}}
-        @if(Session::has('no_hour'))
-        <div
-            class="font-mono text-center text-yellow-600 bg-yellow-400 bg-opacity-40   m-6 p-4 border border-yellow-600 rounded-md leading-tight">
-            <p>{{Session::get('no_hour')}}</p>
+
+        {{-- Primer Card --}}
+        <div class="card1mb lg:mx-auto lg:row-start-2 lg:w-60 ">
+            <p class="card1p lg:pb-2 lg:text-xl lg:font-medium">Hola, por favor verifica tu información personal antes
+                de
+                agendar tu cita.
+            </p>
+            <div class="contbtncard1">
+                <a class="btninfocard1 " href="https://www.google.com">Ver información</a>
+            </div>
         </div>
-        @endif
-    </div>
-    {{-- Segunda Card --}}
-    <div class="text-center row-start-4 bg-gray-100 mx-6 p-2 rounded-lg border border-black shadow-2xl lg:row-start-3">
-        <form id="form" action="{{route('cita.estudiante')}}" method="POST">
-            @csrf
-            <div class="my-1">
-                <label for="fecha">¿Qué día quieres tu cita?</label>
+        {{-- Notificacion de horas no disponibles --}}
+        <div>
+            {{-- TODO: modificar para que desaparezca --}}
+            @if(Session::has('no_hour'))
+            <div class="warnnt lg:row-start-3 lg:w-60 ">
+                <p>{{Session::get('no_hour')}}</p>
             </div>
-            <div class="flex space-x-0 justify-center">
-                <input
-                    class="bg-white placeholder-gray-500 placeholder-opacity-50 rounded-l-lg border border-gray-300 p-2"
-                    id="fecha" class="datepicker" autocomplete="off" placeholder="Selecciona una fecha" name="fecha">
-                <button class="bg-bluet rounded-r-lg p-2 text-white" id="buscar" type="submit"><i
-                        class="fas fa-search"></i></button>
-            </div>
-        </form>
-    </div>
-</main>
+            @endif
+        </div>
+        {{-- Segunda Card --}}
+        <div class="card2mb lg:row-start-4 lg:w-50 lg:mx-auto">
+            <form id="form" action="{{route('cita.estudiante')}}" method="POST">
+                @csrf
+                <div class="my-1 lg:text-xl lg:font-medium lg:pb-2">
+                    <label for="fecha">¿Qué día quieres tu cita?</label>
+                </div>
+                <div class="contcardbtn">
+                    <input class="idatep datepicker" id="fecha" autocomplete="off" placeholder="Selecciona una fecha"
+                        name="fecha">
+                    <button class="btnsearch" id="buscar" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
 @endsection
