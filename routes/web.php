@@ -31,9 +31,9 @@ Route::get('/', HomeController::class);
 
 //Pagina principal estudiante
 Route::get('/estudiante', [EstudianteController::class, 'index'])->name('inicio.estudiante');
-/* Vista movil completado */
+/* Vista movil y vista de escritorio completado */
 
-/* TODO: vista de escritorio
+/* TODO:
         Pantalla principal de estudiantes
         colocarlo en la barra de navegacion
         middleware de acceso TODOS
@@ -44,18 +44,20 @@ Route::get('/estudiante', [EstudianteController::class, 'index'])->name('inicio.
 //Creacion de cita
 Route::post('/cita', [EstudianteController::class, 'create'])->name('cita.estudiante');
 
-/*  Vista movil completado */
+/*  Vista movil y Vista de escritorio completado  */
 
-/* TODO: Vista de escritorio
+/* TODO: input hide para la fecha *tal vez*
         validacion del formulario *datos vacios - formato de datos*
 */
 //Recibe informacion del formulario
 Route::post('/cita/guardar', [EstudianteController::class, 'store'])->name('store.estudiante');
+
 //Actualizar cita
 Route::post('/cita/actualizar/{id}', [EstudianteController::class, 'update'])->name('update.estudiante');
 /* Vista movil */
 
 /* TODO:  analizar si quitarlo
+        tal vez cambiarlo por una funcion de status (cita tomada o no tomada)
         vista de escritorio
         validaciones
 */
@@ -79,8 +81,11 @@ Route::get('/registros', [AdmController::class, 'index'])->name('log.citas');
         middleware solo para adm
 
 */
+/* CRUD */
+/* Detalles */
 Route::get('/registro/{id}', [AdmController::class, 'searchID'])->name('log.id');
-
+/* Editar */
 Route::get('/registro/editar/{id}', [AdmController::class, 'editID'])->name('log.edit');
-
+/* Actualizar esta arriba */
+/* Eliminar */
 Route::get('/registro/eliminar/{id}', [AdmController::class, 'deleteID'])->name('log.del');

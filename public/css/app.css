@@ -13706,6 +13706,22 @@ select {
   min-width: 0;
 }
 
+.min-w-35 {
+  min-width: 35%;
+}
+
+.min-w-38 {
+  min-width: 38%;
+}
+
+.min-w-40 {
+  min-width: 40%;
+}
+
+.min-w-45 {
+  min-width: 45%;
+}
+
 .min-w-1\/4 {
   min-width: 25%;
 }
@@ -25561,8 +25577,24 @@ select {
   width: 30%;
 }
 
+.w-35 {
+  width: 35%;
+}
+
 .w-40 {
   width: 40%;
+}
+
+.w-45 {
+  width: 45%;
+}
+
+.w-47 {
+  width: 47%;
+}
+
+.w-48 {
+  width: 48%;
 }
 
 .w-50 {
@@ -30712,6 +30744,8 @@ select {
 
 /* Principal estudiante */
 
+/* Container */
+
 .contprin {
   width: 100%;
   margin-right: auto;
@@ -30758,6 +30792,8 @@ select {
   grid-template-rows: repeat(5, minmax(0, 1fr));
 }
 
+/* Title */
+
 .h1mb {
   font-weight: 500;
   font-size: 1.875rem;
@@ -30766,6 +30802,8 @@ select {
   margin-right: 1.5rem;
   letter-spacing: 0.05em;
 }
+
+/* First Card */
 
 .card1mb {
   --tw-bg-opacity: 1;
@@ -30780,6 +30818,8 @@ select {
   text-align: center;
 }
 
+/* Card Text */
+
 .card1p {
   font-weight: 300;
   font-size: 0.875rem;
@@ -30788,6 +30828,8 @@ select {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+
+/* Button Container */
 
 .contbtncard1 {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -30799,6 +30841,8 @@ select {
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
+
+/* Button Card */
 
 .btninfocard1 {
   --tw-bg-opacity: 1;
@@ -30828,6 +30872,8 @@ select {
   --tw-ring-opacity: 0.75;
 }
 
+/* Second Card */
+
 .card2mb {
   --tw-bg-opacity: 1;
   background-color: rgba(245, 245, 245, var(--tw-bg-opacity));
@@ -30841,6 +30887,8 @@ select {
   text-align: center;
   grid-row-start: 4;
 }
+
+/* Alert Notification */
 
 .warnnt {
   --tw-bg-opacity: 1;
@@ -30859,6 +30907,8 @@ select {
   color: rgba(217, 119, 6, var(--tw-text-opacity));
 }
 
+/* Button Container */
+
 .contcardbtn > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0px * var(--tw-space-x-reverse));
@@ -30869,6 +30919,8 @@ select {
   display: flex;
   justify-content: center;
 }
+
+/* Input fecha */
 
 .idatep {
   --tw-bg-opacity: 1;
@@ -30899,12 +30951,196 @@ select {
   --tw-placeholder-opacity: 0.5;
 }
 
+/* Submit button - search */
+
 .btnsearch {
   --tw-bg-opacity: 1;
   background-color: rgba(32, 68, 116, var(--tw-bg-opacity));
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   padding: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+/* Formulario de cita */
+
+/* Contenedor */
+
+.contform {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 640px) {
+  .contform {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .contform {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contform {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .contform {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .contform {
+    max-width: 1536px;
+  }
+}
+
+.contform > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0px * var(--tw-space-y-reverse));
+}
+
+.contform {
+  --tw-bg-opacity: 1;
+  background-color: rgba(229, 229, 229, var(--tw-bg-opacity));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 90vh;
+}
+
+/* Card */
+
+.contformcard {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-style: solid;
+  border-width: 1px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  padding: 1rem;
+  --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* Disable input*/
+
+.indis {
+  --tw-bg-opacity: 1;
+  background-color: rgba(212, 212, 212, var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.5;
+  --tw-border-opacity: 1;
+  border-color: rgba(163, 163, 163, var(--tw-border-opacity));
+  border-width: 0px;
+  border-bottom-width: 2px;
+  cursor: not-allowed;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  margin-bottom: 1rem;
+  min-width: 100%;
+}
+
+/* Select */
+
+.selcont {
+  --tw-border-opacity: 1;
+  border-color: rgba(163, 163, 163, var(--tw-border-opacity));
+}
+
+.selcont:focus {
+  --tw-border-opacity: 1;
+  border-color: rgba(2, 132, 199, var(--tw-border-opacity));
+}
+
+.selcont {
+  border-width: 0px;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  margin-bottom: 1rem;
+  min-width: 100%;
+}
+
+.selcont:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+/* Inputs */
+
+.formin {
+  --tw-border-opacity: 1;
+  border-color: rgba(163, 163, 163, var(--tw-border-opacity));
+}
+
+.formin:focus {
+  --tw-border-opacity: 1;
+  border-color: rgba(2, 132, 199, var(--tw-border-opacity));
+}
+
+.formin {
+  border-width: 0px;
+  border-bottom-width: 2px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  min-width: 100%;
+}
+
+.formin:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.formin::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(163, 163, 163, var(--tw-placeholder-opacity));
+}
+
+.formin:-ms-input-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(163, 163, 163, var(--tw-placeholder-opacity));
+}
+
+.formin::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgba(163, 163, 163, var(--tw-placeholder-opacity));
+}
+
+.formin:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+/* Submit button */
+
+.btnsub {
+  --tw-bg-opacity: 1;
+  background-color: rgba(32, 68, 116, var(--tw-bg-opacity));
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  min-width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 7rem;
+  padding-right: 7rem;
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
@@ -43901,6 +44137,22 @@ select {
     min-width: 0;
   }
 
+  .sm\:min-w-35 {
+    min-width: 35%;
+  }
+
+  .sm\:min-w-38 {
+    min-width: 38%;
+  }
+
+  .sm\:min-w-40 {
+    min-width: 40%;
+  }
+
+  .sm\:min-w-45 {
+    min-width: 45%;
+  }
+
   .sm\:min-w-1\/4 {
     min-width: 25%;
   }
@@ -55743,8 +55995,24 @@ select {
     width: 30%;
   }
 
+  .sm\:w-35 {
+    width: 35%;
+  }
+
   .sm\:w-40 {
     width: 40%;
+  }
+
+  .sm\:w-45 {
+    width: 45%;
+  }
+
+  .sm\:w-47 {
+    width: 47%;
+  }
+
+  .sm\:w-48 {
+    width: 48%;
   }
 
   .sm\:w-50 {
@@ -73334,6 +73602,22 @@ select {
     min-width: 0;
   }
 
+  .md\:min-w-35 {
+    min-width: 35%;
+  }
+
+  .md\:min-w-38 {
+    min-width: 38%;
+  }
+
+  .md\:min-w-40 {
+    min-width: 40%;
+  }
+
+  .md\:min-w-45 {
+    min-width: 45%;
+  }
+
   .md\:min-w-1\/4 {
     min-width: 25%;
   }
@@ -85176,8 +85460,24 @@ select {
     width: 30%;
   }
 
+  .md\:w-35 {
+    width: 35%;
+  }
+
   .md\:w-40 {
     width: 40%;
+  }
+
+  .md\:w-45 {
+    width: 45%;
+  }
+
+  .md\:w-47 {
+    width: 47%;
+  }
+
+  .md\:w-48 {
+    width: 48%;
   }
 
   .md\:w-50 {
@@ -102767,6 +103067,22 @@ select {
     min-width: 0;
   }
 
+  .lg\:min-w-35 {
+    min-width: 35%;
+  }
+
+  .lg\:min-w-38 {
+    min-width: 38%;
+  }
+
+  .lg\:min-w-40 {
+    min-width: 40%;
+  }
+
+  .lg\:min-w-45 {
+    min-width: 45%;
+  }
+
   .lg\:min-w-1\/4 {
     min-width: 25%;
   }
@@ -114609,8 +114925,24 @@ select {
     width: 30%;
   }
 
+  .lg\:w-35 {
+    width: 35%;
+  }
+
   .lg\:w-40 {
     width: 40%;
+  }
+
+  .lg\:w-45 {
+    width: 45%;
+  }
+
+  .lg\:w-47 {
+    width: 47%;
+  }
+
+  .lg\:w-48 {
+    width: 48%;
   }
 
   .lg\:w-50 {
@@ -132200,6 +132532,22 @@ select {
     min-width: 0;
   }
 
+  .xl\:min-w-35 {
+    min-width: 35%;
+  }
+
+  .xl\:min-w-38 {
+    min-width: 38%;
+  }
+
+  .xl\:min-w-40 {
+    min-width: 40%;
+  }
+
+  .xl\:min-w-45 {
+    min-width: 45%;
+  }
+
   .xl\:min-w-1\/4 {
     min-width: 25%;
   }
@@ -144042,8 +144390,24 @@ select {
     width: 30%;
   }
 
+  .xl\:w-35 {
+    width: 35%;
+  }
+
   .xl\:w-40 {
     width: 40%;
+  }
+
+  .xl\:w-45 {
+    width: 45%;
+  }
+
+  .xl\:w-47 {
+    width: 47%;
+  }
+
+  .xl\:w-48 {
+    width: 48%;
   }
 
   .xl\:w-50 {
@@ -161633,6 +161997,22 @@ select {
     min-width: 0;
   }
 
+  .\32xl\:min-w-35 {
+    min-width: 35%;
+  }
+
+  .\32xl\:min-w-38 {
+    min-width: 38%;
+  }
+
+  .\32xl\:min-w-40 {
+    min-width: 40%;
+  }
+
+  .\32xl\:min-w-45 {
+    min-width: 45%;
+  }
+
   .\32xl\:min-w-1\/4 {
     min-width: 25%;
   }
@@ -173475,8 +173855,24 @@ select {
     width: 30%;
   }
 
+  .\32xl\:w-35 {
+    width: 35%;
+  }
+
   .\32xl\:w-40 {
     width: 40%;
+  }
+
+  .\32xl\:w-45 {
+    width: 45%;
+  }
+
+  .\32xl\:w-47 {
+    width: 47%;
+  }
+
+  .\32xl\:w-48 {
+    width: 48%;
   }
 
   .\32xl\:w-50 {

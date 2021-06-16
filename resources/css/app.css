@@ -95,47 +95,73 @@
 }
 
 /* Principal estudiante */
-
+/* Container */
 .contprin {
     @apply container grid grid-rows-5 gap-2 justify-center items-center min-h-90 font-sans;
 }
-
+/* Title */
 .h1mb {
     @apply text-3xl font-medium tracking-wider mx-6;
 }
-
+/* First Card */
 .card1mb {
     @apply bg-gray-100 mx-6 p-2 rounded-lg border shadow-2xl text-center;
 }
-
+/* Card Text */
 .card1p {
     @apply mx-4 text-sm font-light leading-tight;
 }
-
+/* Button Container */
 .contbtncard1 {
     @apply font-mono font-extralight text-white mt-2 mb-1 mx-12;
 }
-
+/* Button Card */
 .btninfocard1 {
     @apply bg-bluet rounded-full py-2 px-5 hover:ring-4 hover:ring-blue-400 hover:ring-offset-0 hover:ring-opacity-75 active:bg-blue-500;
 }
-
+/* Second Card */
 .card2mb {
     @apply text-center row-start-4 bg-gray-100 mx-6 p-2 rounded-lg border shadow-2xl;
 }
-
+/* Alert Notification */
 .warnnt {
     @apply font-mono text-center text-yellow-600 bg-yellow-400 bg-opacity-40  m-6 p-4 border border-yellow-600 rounded-md leading-tight;
 }
-
+/* Button Container */
 .contcardbtn {
     @apply flex space-x-0 justify-center;
 }
-
+/* Input fecha */
 .idatep {
     @apply bg-white placeholder-gray-500 placeholder-opacity-50 rounded-l-lg border border-gray-300 p-2;
 }
-
+/* Submit button - search */
 .btnsearch {
     @apply bg-bluet rounded-r-lg p-2 text-white;
+}
+
+/* Formulario de cita */
+/* Contenedor */
+.contform {
+    @apply container mx-auto min-h-90 flex flex-col justify-center items-center  bg-gray-200 space-y-0;
+}
+/* Card */
+.contformcard {
+    @apply bg-white rounded-t-lg shadow-2xl border-solid border mx-6 p-4;
+}
+/* Disable input*/
+.indis {
+    @apply cursor-not-allowed bg-gray-300 bg-opacity-50 border-0 border-b-2 border-gray-400 min-w-full mb-4 font-mono;
+}
+/* Select */
+.selcont {
+    @apply border-0 border-b-2 border-gray-400 min-w-full cursor-pointer focus:border-blue-600 focus:outline-none focus:ring-0 mb-4 font-mono;
+}
+/* Inputs */
+.formin {
+    @apply border-0 border-b-2 border-gray-400 min-w-full placeholder-gray-400 focus:border-blue-600 focus:outline-none focus:ring-0 font-mono;
+}
+/* Submit button */
+.btnsub {
+    @apply text-white rounded-b-lg bg-bluet shadow-lg min-w-full px-28 py-2;
 }

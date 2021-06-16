@@ -34,7 +34,7 @@
         <div>
             {{-- TODO: modificar para que desaparezca --}}
             @if(Session::has('no_hour'))
-            <div class="warnnt lg:row-start-3 lg:w-60 ">
+            <div class="warnnt lg:row-start-3 lg:w-60 lg:mx-auto">
                 <p>{{Session::get('no_hour')}}</p>
             </div>
             @endif
