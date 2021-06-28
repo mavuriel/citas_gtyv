@@ -14,6 +14,10 @@ class EstudianteController extends Controller
 
     public function create(Request $req)
     {
+        $req->validate([
+            'fecha' => 'required'
+        ]);
+
         /* Obtencion de la fecha en la vista estudiante */
         $fes = $req->fecha;
         /* Envio el dato a otra funcion para obtener las horas disponibles */
@@ -44,6 +48,13 @@ class EstudianteController extends Controller
 
     public function store(Request $req)
     {
+        $req->validate([
+            'hora' => 'required',
+            'cita' => 'required',
+            'nombre' => array('required', 'regex:/^([A-Z]([a-z]+)(\s*)){2,}$/u'),
+            'control' => array('required', 'regex:/^[E]([1][0-9]|[2][0-1])([0][1]|[0][2])\d{4}$/i')
+        ]);
+
         $cita = new Cita;
 
         $cita->service = $req->cita;
@@ -60,10 +71,17 @@ class EstudianteController extends Controller
     public function update(Request $req, $id)
     {
         /*TODO: Jerarquia de validaciones
-            1. Datos vacios
+            1. Datos vacios LISTO
             2. Datos no modificados
             3. Fecha/hora no disponible
-            4. Formato de datos */
+            4. Formato de datos LISTO
+        */
+        $req->validate([
+            'ahora' => 'required',
+            'servicea' => 'required',
+            'nombrea' => array('required', 'regex:/^([A-Z]([a-z]+)(\s*)){2,}$/u'),
+            'ncontrola' => array('required', 'regex:/^[E]([1][0-9]|[2][0-1])([0][1]|[0][2])\d{4}$/i')
+        ]);
 
         $cita = new Cita();
         $cita = Cita::find($id);

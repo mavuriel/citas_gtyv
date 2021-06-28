@@ -79,7 +79,7 @@
 }
 
 .btnleft {
-    @apply bg-bluet text-white active:bg-blue-700 min-w-1/2 py-2 rounded-bl-lg;
+    @apply bg-bluet text-white active:bg-blue-700 min-w-1/2 py-2 rounded-bl-lg shadow-lg;
 }
 
 .btnright {
@@ -164,4 +164,42 @@
 /* Submit button */
 .btnsub {
     @apply text-white rounded-b-lg bg-bluet shadow-lg min-w-full px-28 py-2;
+}
+
+.btnsubr {
+    @apply bg-green-700 shadow-lg text-white min-w-1/2 py-2 rounded-br-lg;
+}
+
+/* Registros */
+/* Contenedor registros movil */
+.contcards {
+    @apply grid grid-flow-row gap-2 mx-4 min-h-full;
+}
+/* Contenedor h1 */
+.conth1reg {
+    @apply flex items-center justify-center;
+}
+/* H1 */
+.h1log {
+    @apply text-center tracking-wider font-bold text-2xl text-gray-700;
+}
+/* Contenedor de las card dentro del foreach */
+.conteachcard {
+    @apply bg-white rounded-lg shadow-2xl px-2 py-1 my-auto;
+}
+/* Burbuja para nombre del campo */
+.bubblebg {
+    @apply bg-bluet text-white-light font-light tracking-wide rounded-full px-1.5 py-1;
+}
+/* Boton de detalles */
+.detailsbtn {
+    @apply bg-blue-600 ring-blue-500 active:bg-blue-500 active:ring-blue-700 rounded-full ring-2  ring-opacity-50 py-1 px-5 text-white;
+}
+/* Boton de eliminar */
+.deletebtn {
+    @apply bg-red-700 ring-red-500 active:bg-red-500 active:ring-red-700 text-white ring-2 ring-opacity-50 rounded-full py-1 px-4 place-self-center;
+}
+/* Alerta de peligro - eliminacion */
+.dangeralert {
+    @apply font-mono text-center text-red-600 bg-red-400 bg-opacity-40 m-6 p-4 border border-red-600 rounded-md leading-tight;
 }

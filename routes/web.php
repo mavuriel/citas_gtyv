@@ -26,40 +26,47 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //Pagina principal
 Route::get('/', HomeController::class);
 /* Vista movil y escritorio completado */
+
 /* TODO: titulo pantalla principal
         redirigirlos con el logo del tec*/
 
 //Pagina principal estudiante
 Route::get('/estudiante', [EstudianteController::class, 'index'])->name('inicio.estudiante');
-/* Vista movil y vista de escritorio completado */
+/* Hecho:
+    Vista movil y vista de escritorio completado
+    validacion de fecha vacia
+*/
 
 /* TODO:
         Pantalla principal de estudiantes
         colocarlo en la barra de navegacion
         middleware de acceso TODOS
         informacion personal *no se ha hecho*
-        validacion de fecha vacia
-        */
+*/
 
 //Creacion de cita
-Route::post('/cita', [EstudianteController::class, 'create'])->name('cita.estudiante');
+Route::get('/cita', [EstudianteController::class, 'create'])->name('cita.estudiante');
 
-/*  Vista movil y Vista de escritorio completado  */
+/*
+    Vista movil y Vista de escritorio completado
+    validacion del formulario *datos vacios - formato de datos*
+*/
 
 /* TODO: input hide para la fecha *tal vez*
-        validacion del formulario *datos vacios - formato de datos*
+        cambiar como se muestra la url (fue necesario para hacer la validacion - cambio get)
 */
 //Recibe informacion del formulario
 Route::post('/cita/guardar', [EstudianteController::class, 'store'])->name('store.estudiante');
 
 //Actualizar cita
 Route::post('/cita/actualizar/{id}', [EstudianteController::class, 'update'])->name('update.estudiante');
-/* Vista movil */
+/* Vista movil
+    validaciones
+*/
 
 /* TODO:  analizar si quitarlo
         tal vez cambiarlo por una funcion de status (cita tomada o no tomada)
         vista de escritorio
-        validaciones
 */
 //Citas estudiante
 Route::get('/miscitas/{cita}', [EstudianteController::class, 'show'])->name('show.estudiante');
@@ -72,10 +79,11 @@ Route::get('/miscitas/{cita}', [EstudianteController::class, 'show'])->name('sho
 
 //Todos los registros
 Route::get('/registros', [AdmController::class, 'index'])->name('log.citas');
-/* Vista movil completado
+/* Vista movil completado vista de escritorio
     funcion crud */
 
-/* TODO: vista de escritorio
+/* TODO:
+        regresar las citas de la fecha de hoy en adelante y en otra tabla menos elaborada todos los registros
         pagina principal de administradores
         colocarlo en la barra de navegacion solo para adm
         middleware solo para adm

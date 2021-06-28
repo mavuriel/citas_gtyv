@@ -36,15 +36,28 @@
             </div>
             <div class="bodycard">
                 <label class="fontlabel" for="nombre">Nombre</label>
-                <input class="mininput" type="text" name="nombrea" id="nombre" value="{{$info-> name}}">
+                <input class="mininput" type="text" name="nombrea" id="nombre" value="{{old('nombrea',$info-> name)}}">
+                @error('nombrea')
+                <p>{{$message}}</p>
+                @enderror
                 <label class="fontlabel" for="control">Numero de control</label>
-                <input class="mininput" type="text" name="ncontrola" id="control" value="{{$info-> n_control}}">
+                <input class="mininput" type="text" name="ncontrola" id="control"
+                    value="{{old('ncontrola',$info-> n_control)}}">
+                @error('ncontrola')
+                <p>{{$message}}</p>
+                @enderror
                 <label class="fontlabel" for="fecha">Fecha de la cita</label>
                 <input class="mininput" id="fecha" class="datepicker" autocomplete="off"
-                    placeholder="Selecciona una fecha" name="afecha" value="{{$info-> date_taken}}">
+                    placeholder="Selecciona una fecha" name="afecha" value="{{old('afecha',$info-> date_taken)}}">
+                @error('afecha')
+                <p>{{$message}}</p>
+                @enderror
                 {{-- TODO: verificar las horas libres --}}
                 <label class="fontlabel" for="hora">Hora de la cita</label>
-                <input class="mininput" type="time" name="ahora" id="hora" value="{{$info-> hour_taken}}">
+                <input class="mininput" type="time" name="ahora" id="hora" value="{{old('ahora',$info-> hour_taken)}}">
+                @error('ahora')
+                <p>{{$message}}</p>
+                @enderror
                 <label class="fontlabel" for="serv">Servicio</label>
                 <select class="mininput" name="servicea">
                     @if ($info-> service == 'rd')

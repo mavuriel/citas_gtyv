@@ -38,10 +38,15 @@
                 <p>{{Session::get('no_hour')}}</p>
             </div>
             @endif
+            @error('fecha')
+            <div class="dangeralert lg:row-start-3 lg:w-60 lg:mx-auto">
+                <p>{{$message}}</p>
+            </div>
+            @enderror
         </div>
         {{-- Segunda Card --}}
         <div class="card2mb lg:row-start-4 lg:w-50 lg:mx-auto">
-            <form id="form" action="{{route('cita.estudiante')}}" method="POST">
+            <form id="form" action="{{route('cita.estudiante')}}" method="GET">
                 @csrf
                 <div class="my-1 lg:text-xl lg:font-medium lg:pb-2">
                     <label for="fecha">¿Qué día quieres tu cita?</label>

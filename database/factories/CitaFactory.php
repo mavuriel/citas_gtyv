@@ -27,7 +27,7 @@ class CitaFactory extends Factory
             'hour_taken' => $this->faker->time(),
             'n_control' => $this->faker->regexify('[E]([1-2][0-9]|[3][0])(\d{6})'),
             'name' => $this->faker->name($gender = 'male' | 'female'),
-            'asigned_to' => $this->faker->randomElement(['Rihana', 'Luis Miguel', 'Pedro Paramo'])
+            'asigned_to' => $this->faker->randomElement(['Rihana', 'Luis Miguel', 'Pedro Paramo'])/* No te olvides de quitarlo */
         ];
     }
 }
