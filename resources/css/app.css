@@ -140,36 +140,6 @@
     @apply bg-bluet rounded-r-lg p-2 text-white;
 }
 
-/* Formulario de cita */
-/* Contenedor */
-.contform {
-    @apply container mx-auto min-h-90 flex flex-col justify-center items-center  bg-gray-200 space-y-0;
-}
-/* Card */
-.contformcard {
-    @apply bg-white rounded-t-lg shadow-2xl border-solid border mx-6 p-4;
-}
-/* Disable input*/
-.indis {
-    @apply cursor-not-allowed bg-gray-300 bg-opacity-50 border-0 border-b-2 border-gray-400 min-w-full mb-4 font-mono;
-}
-/* Select */
-.selcont {
-    @apply border-0 border-b-2 border-gray-400 min-w-full cursor-pointer focus:border-blue-600 focus:outline-none focus:ring-0 mb-4 font-mono;
-}
-/* Inputs */
-.formin {
-    @apply border-0 border-b-2 border-gray-400 min-w-full placeholder-gray-400 focus:border-blue-600 focus:outline-none focus:ring-0 font-mono;
-}
-/* Submit button */
-.btnsub {
-    @apply text-white rounded-b-lg bg-bluet shadow-lg min-w-full px-28 py-2;
-}
-
-.btnsubr {
-    @apply bg-green-700 shadow-lg text-white min-w-1/2 py-2 rounded-br-lg;
-}
-
 /* Registros */
 /* Contenedor registros movil */
 .contcards {
@@ -202,4 +172,36 @@
 /* Alerta de peligro - eliminacion */
 .dangeralert {
     @apply font-mono text-center text-red-600 bg-red-400 bg-opacity-40 m-6 p-4 border border-red-600 rounded-md leading-tight;
+}
+
+/* Formulario estudiante */
+/* Contenedor main */
+.formcont {
+    @apply container flex flex-col justify-center items-center space-y-0 bg-gray-200 min-h-90;
+}
+
+.formtcard {
+    @apply bg-white rounded-t-lg shadow-2xl border-solid border p-4 mx-2;
+}
+
+.btncont {
+    @apply inline-flex min-w-full px-2;
+}
+
+.btnsubr {
+    @apply bg-green-700 shadow-lg text-white min-w-1/2 py-2 rounded-br-lg;
+}
+
+/* Disable input*/
+.indis {
+    @apply cursor-not-allowed bg-gray-300 bg-opacity-50 border-0 border-b-2 border-gray-400 min-w-full mb-4 font-mono;
+}
+
+/* Select */
+.selcont {
+    @apply border-0 border-b-2 border-gray-400 min-w-full cursor-pointer focus:border-blue-600 focus:outline-none focus:ring-0 mb-4 font-mono;
+}
+/* Inputs */
+.formin {
+    @apply border-0 border-b-2 border-gray-400 min-w-full placeholder-gray-400 focus:border-blue-600 focus:outline-none focus:ring-0 font-mono;
 }

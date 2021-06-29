@@ -10,9 +10,8 @@
 @section('content')
 <div class="bgtec lg:bg-left ">
     <main class="mainsm lg:grid-rows-6 ">
-        {{-- TODO: Ver el video layout para cambiarlo si no dejalo asi --}}
-        <div class="relative filter blur bg-transparent row-start-2 ">
-            <h1 class="tltg absolute lg:text-5xl lg:uppercase lg:tracking-widest">
+        <div class="row-start-2 ">
+            <h1 class="tltg lg:text-5xl lg:uppercase lg:tracking-widest">
                 Gestión Tecnológica y Vinculación
             </h1>
         </div>

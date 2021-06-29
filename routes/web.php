@@ -23,23 +23,21 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-//Pagina principal
-Route::get('/', HomeController::class);
-/* Vista movil y escritorio completado */
+/* TODO: no funciona las opciones del menu desplegable del usuario en la barra de navegacion */
 
-/* TODO: titulo pantalla principal
-        redirigirlos con el logo del tec*/
+//Pagina principal
+Route::get('/', HomeController::class)->name('index');
 
 //Pagina principal estudiante
 Route::get('/estudiante', [EstudianteController::class, 'index'])->name('inicio.estudiante');
 /* Hecho:
     Vista movil y vista de escritorio completado
     validacion de fecha vacia
+    colocarlo en la barra de navegacion
 */
 
 /* TODO:
         Pantalla principal de estudiantes
-        colocarlo en la barra de navegacion
         middleware de acceso TODOS
         informacion personal *no se ha hecho*
 */
@@ -61,7 +59,7 @@ Route::post('/cita/guardar', [EstudianteController::class, 'store'])->name('stor
 //Actualizar cita
 Route::post('/cita/actualizar/{id}', [EstudianteController::class, 'update'])->name('update.estudiante');
 /* Vista movil
-    validaciones
+    validaciones 2 de 4
 */
 
 /* TODO:  analizar si quitarlo

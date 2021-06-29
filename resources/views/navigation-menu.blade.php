@@ -1,14 +1,20 @@
-{{-- Array para los links de la barra de navegacion --}}
+{{-- Array para los links de la barra de navegacion
+    [
+    'name' => 'prueba 2',
+    'route' => '#' /* route('#') */,/* nombre del route */
+    'active' => false/* request()->routeIs('#') *//* nombre del route */
+    ]
+--}}
 @php
 $nav_links = [
 [
-'name' => 'prueba 1',
-'route' => '#' /* route('#') */,/* nombre del route */
-'active' => false/* request()->routeIs('#') *//* nombre del route */
+'name' => 'Estudiante',
+'route' => route('inicio.estudiante'),
+'active' => request()->routeIs('inicio.estudiante')
 ],[
-'name' => 'prueba 2',
-'route' => '#' /* route('#') */,/* nombre del route */
-'active' => false/* request()->routeIs('#') *//* nombre del route */
+'name' => 'Citas',
+'route' => route('log.citas'),
+'active' => request()->routeIs('log.citas')
 ],
 ];
 @endphp
@@ -22,7 +28,7 @@ $nav_links = [
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center ">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('index') }}">
                         {{-- Componente de jet ubicado en vendor/laravel/jetstream/resources/components/aplication-mark.blade.php --}}
                         <x-jet-application-mark class="block" />
                         {{-- LOGO class="bg-logo bg-center bg-auto bg-no-repeat" --}}
@@ -44,8 +50,6 @@ $nav_links = [
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-
-
                 {{-- Esto maneja los links del boton de usuario --}}
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
@@ -115,7 +119,7 @@ $nav_links = [
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
                 <button @click="open = ! open"
-                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition">
+                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
