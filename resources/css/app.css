@@ -11,7 +11,7 @@
 }
 
 .tltg {
-    @apply text-white text-2xl font-medium p-1 mx-12 text-center tracking-wider break-words;
+    @apply text-white text-3xl font-medium p-1 mx-12 text-center tracking-wider break-words;
 }
 
 .ordcite {
@@ -199,7 +199,7 @@
 
 /* Select */
 .selcont {
-    @apply border-0 border-b-2 border-gray-400 min-w-full cursor-pointer focus:border-blue-600 focus:outline-none focus:ring-0 mb-4 font-mono;
+    @apply border-0 border-b-2 border-gray-400 min-w-full cursor-pointer focus:border-blue-600 focus:outline-none focus:ring-0 font-mono;
 }
 /* Inputs */
 .formin {

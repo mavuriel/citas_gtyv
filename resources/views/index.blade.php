@@ -8,24 +8,32 @@
 @endsection
 
 @section('content')
-<div class="bgtec lg:bg-left ">
-    <main class="mainsm lg:grid-rows-6 ">
+<div class="bgtec lg:bg-left">
+    <main class="mainsm lg:grid-rows-6">
         <div class="row-start-2 ">
             <h1 class="tltg lg:text-5xl lg:uppercase lg:tracking-widest">
                 Gestión Tecnológica y Vinculación
             </h1>
         </div>
         <div class="ordcite lg:row-start-4">
-            <a href="{{route('inicio.estudiante')}}" class="btncite ">Agenda tu cita</a>
+            <a href="{{route('inicio.estudiante')}}" class="btncite ">
+                Agenda tu cita
+            </a>
         </div>
         <div class="tbhr lg:row-start-6">
             <table>
-                <caption>Horario de atención</caption>
+                <caption>
+                    Horario de atención
+                </caption>
                 <tr>
-                    <td>Lunes a Viernes</td>
+                    <td>
+                        Lunes a Viernes
+                    </td>
                 </tr>
                 <tr>
-                    <td>10:00 - 15:00</td>
+                    <td>
+                        10:00 - 15:00
+                    </td>
                 </tr>
             </table>
         </div>

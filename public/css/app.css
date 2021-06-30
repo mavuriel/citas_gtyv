@@ -27535,6 +27535,14 @@ select {
   width: 60%;
 }
 
+.w-70 {
+  width: 70%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
 .w-auto {
   width: auto;
 }
@@ -32330,8 +32338,8 @@ select {
 
 .tltg {
   font-weight: 500;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   margin-left: 3rem;
   margin-right: 3rem;
   padding: 0.25rem;
@@ -33175,7 +33183,6 @@ select {
   border-bottom-width: 2px;
   cursor: pointer;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  margin-bottom: 1rem;
   min-width: 100%;
 }
 
@@ -60038,6 +60045,14 @@ select {
 
   .sm\:w-60 {
     width: 60%;
+  }
+
+  .sm\:w-70 {
+    width: 70%;
+  }
+
+  .sm\:w-80 {
+    width: 80%;
   }
 
   .sm\:w-auto {
@@ -91435,6 +91450,14 @@ select {
     width: 60%;
   }
 
+  .md\:w-70 {
+    width: 70%;
+  }
+
+  .md\:w-80 {
+    width: 80%;
+  }
+
   .md\:w-auto {
     width: auto;
   }
@@ -122828,6 +122851,14 @@ select {
 
   .lg\:w-60 {
     width: 60%;
+  }
+
+  .lg\:w-70 {
+    width: 70%;
+  }
+
+  .lg\:w-80 {
+    width: 80%;
   }
 
   .lg\:w-auto {
@@ -154225,6 +154256,14 @@ select {
     width: 60%;
   }
 
+  .xl\:w-70 {
+    width: 70%;
+  }
+
+  .xl\:w-80 {
+    width: 80%;
+  }
+
   .xl\:w-auto {
     width: auto;
   }
@@ -185618,6 +185657,14 @@ select {
 
   .\32xl\:w-60 {
     width: 60%;
+  }
+
+  .\32xl\:w-70 {
+    width: 70%;
+  }
+
+  .\32xl\:w-80 {
+    width: 80%;
   }
 
   .\32xl\:w-auto {
