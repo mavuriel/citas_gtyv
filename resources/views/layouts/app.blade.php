@@ -20,7 +20,12 @@
     <meta name="msapplication-TileColor" content="#00a300">
     <meta name="theme-color" content="#ffffff">
 
+    @if (request()->routeIs('profile.show'))
+    <title>Panel de cuenta</title>
+    @else
     <title>@yield('title')</title>
+    @endif
+
 
     <style type="text/css">
         @yield('opt-style');
@@ -41,7 +46,23 @@
         @livewire('navigation-menu')
     </header>
 
+
+    {{--
+    Condicional que checa si se encuentra en la ruta que administra
+    la cuenta del usuario para mostrarla es necesario agregar "{{el componente de blade}}"
+    el nombre de la ruta a la cual se compara se encuentra en el archivo
+    navigation-menu.blade.php en la seccion "Account Management"
+    --}}
+    @if (request()->routeIs('profile.show'))
+    {{-- Este componente de blade se encuentra en
+        resources/views/profile/show.blade.php
+        yo le cambie el nombre y le puse prueba
+        *funciona en movil pero no se si sea responsivo totalmente*
+    --}}
+    {{$prueba}}
+    @else
     @yield('content')
+    @endif
 
     <footer>
         @yield('footer')
@@ -52,6 +73,7 @@
     </script>
 
     @yield('others')
+    @livewireScripts
 </body>
 
 </html>

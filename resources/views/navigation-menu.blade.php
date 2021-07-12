@@ -19,7 +19,8 @@ $nav_links = [
 ];
 @endphp
 
-{{-- Todo esto es renderizado desde app.blade.php en la orden de @livewire('navigation-menu') --}}
+{{-- Todo esto es renderizado desde app.blade.php
+    en la orden de @livewire('navigation-menu') --}}
 <nav x-data="{ open: false }" class="bg-bluet border-b border-gray-800 shadow min-h-10 md:py-4">
     <!-- Primary Navigation Menu -->
     {{-- Barra de navegacion en vista de escritorio --}}
@@ -55,7 +56,7 @@ $nav_links = [
                 <div class="ml-3 relative">
                     {{-- Estas directivas de autenticacion evitan que de error cuando no se encuentre logeado un usuario --}}
                     @auth
-                    <x-jet-dropdown align="right" width="48">
+                    <x-jet-dropdown align="left" width="50">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                             <button
@@ -83,11 +84,13 @@ $nav_links = [
                         <x-slot name="content">
                             <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
+                                {{-- {{ __('Manage Account') }} --}}
+                                Panel
                             </div>
 
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                                {{-- {{ __('Profile') }} --}}
+                                Perfil
                             </x-jet-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -104,7 +107,8 @@ $nav_links = [
 
                                 <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                                    {{ __('Log Out') }}
+                                    {{-- {{ __('Log Out') }} --}}
+                                    Cerrar sesión
                                 </x-jet-dropdown-link>
                             </form>
                         </x-slot>
@@ -119,7 +123,7 @@ $nav_links = [
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
                 <button @click="open = ! open"
-                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition">
+                    class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -158,7 +162,7 @@ $nav_links = [
                 @endif
 
                 <div>
-                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
+                    <div class="font-medium text-base text-white">{{ Auth::user()->name }}</div>
                     <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
                 </div>
             </div>
@@ -167,7 +171,8 @@ $nav_links = [
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}"
                     :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
+                    {{-- {{ __('Profile') }} --}}
+                    Perfil
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -183,7 +188,8 @@ $nav_links = [
 
                     <x-jet-responsive-nav-link href="{{ route('logout') }}" onclick="event.preventDefault();
                                     this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{-- {{ __('Log Out') }} --}}
+                        Cerrar sesión
                     </x-jet-responsive-nav-link>
                 </form>
 

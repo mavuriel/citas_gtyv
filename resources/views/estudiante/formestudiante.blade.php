@@ -15,9 +15,10 @@
             <label for="date" class="tracking-wider font-light text-lg">
                 Fecha
             </label>
+            <input type="hidden" name="fecha" value="{{$fes}}">
             <input
                 class="min-w-full border-0 border-b-2 border-gray-500 bg-opacity-30 bg-gray-400 cursor-not-allowed font-mono text-sm pb-2 md:text-base"
-                id="date" type="date" name="fecha" value="{{$fes}}" readonly>
+                id="date" type="text" value="{{$fes}}" readonly>
 
             <label for="hour" class="tracking-wider font-light text-lg">
                 Horarios disponibles

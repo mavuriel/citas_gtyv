@@ -1,7 +1,7 @@
 // Initialize and add the map
 function initMap() {
     const gtyv = { lat:19.201068598176334, lng:-96.16024504012898};
-// The map, centered at Uluru
+// The map
     const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 18,
     center: gtyv,

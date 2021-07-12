@@ -23,18 +23,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-/* TODO: no funciona las opciones del menu desplegable del usuario en la barra de navegacion */
-
 //Pagina principal
 Route::get('/', HomeController::class)->name('index');
 
 //Pagina principal estudiante
 Route::get('/estudiante', [EstudianteController::class, 'index'])->name('inicio.estudiante');
-/* Hecho:
-    Vista movil y vista de escritorio completado
-    validacion de fecha vacia
-    colocarlo en la barra de navegacion
-*/
 
 /* TODO:
         Pantalla principal de estudiantes
@@ -45,12 +38,7 @@ Route::get('/estudiante', [EstudianteController::class, 'index'])->name('inicio.
 //Creacion de cita
 Route::get('/cita', [EstudianteController::class, 'create'])->name('cita.estudiante');
 
-/*
-    Vista movil y Vista de escritorio completado
-    validacion del formulario *datos vacios - formato de datos*
-*/
-
-/* TODO: input hide para la fecha *tal vez*
+/* TODO:
         cambiar como se muestra la url (fue necesario para hacer la validacion - cambio get)
 */
 //Recibe informacion del formulario
@@ -58,11 +46,10 @@ Route::post('/cita/guardar', [EstudianteController::class, 'store'])->name('stor
 
 //Actualizar cita
 Route::post('/cita/actualizar/{id}', [EstudianteController::class, 'update'])->name('update.estudiante');
-/* Vista movil
-    validaciones 2 de 4
-*/
 
-/* TODO:  analizar si quitarlo
+/* TODO:
+        validaciones 2 de 4
+        analizar si quitarlo
         tal vez cambiarlo por una funcion de status (cita tomada o no tomada)
         vista de escritorio
 */
