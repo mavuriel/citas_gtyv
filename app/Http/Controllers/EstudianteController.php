@@ -7,6 +7,10 @@ use App\Models\Cita;
 
 class EstudianteController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         return view('estudiante.principalestudiante');

@@ -15,14 +15,6 @@ use App\Http\Controllers\AdmController;
 |
 */
 
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
 //Pagina principal
 Route::get('/', HomeController::class)->name('index');
 
@@ -30,8 +22,7 @@ Route::get('/', HomeController::class)->name('index');
 Route::get('/estudiante', [EstudianteController::class, 'index'])->name('inicio.estudiante');
 
 /* TODO:
-        Pantalla principal de estudiantes
-        middleware de acceso TODOS
+
         informacion personal *no se ha hecho*
 */
 
@@ -63,16 +54,10 @@ Route::get('/miscitas/{cita}', [EstudianteController::class, 'show'])->name('sho
 */
 
 //Todos los registros
-Route::get('/registros', [AdmController::class, 'index'])->name('log.citas');
-/* Vista movil completado vista de escritorio
-    funcion crud */
+Route::get('/registros', [AdmController::class, 'index'])->name('log.citas')->middleware('rol.admin');
 
 /* TODO:
-        regresar las citas de la fecha de hoy en adelante y en otra tabla menos elaborada todos los registros
-        pagina principal de administradores
-        colocarlo en la barra de navegacion solo para adm
-        middleware solo para adm
-
+        regresar las citas de la fecha de hoy en adelante y en otra tabla menos elaborada todos los registros *checar lo de carbon php*
 */
 /* CRUD */
 /* Detalles */

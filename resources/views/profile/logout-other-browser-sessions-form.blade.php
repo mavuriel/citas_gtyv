@@ -13,9 +13,8 @@
         <div class="max-w-xl text-sm text-gray-600">
             {{-- {{ __('If necessary, you may log out of all of your other browser sessions across all of your devices. Some of your recent sessions are listed below; however, this list may not be exhaustive. If you feel your account has been compromised, you should also update your password.') }}
             --}}
-            Si es necesario, puedes cerrar la sesión de todas las demás sesiones de su navegador en todos sus
-            dispositivos. Algunas de sus sesiones recientes se listan a continuación; sin embargo, esta lista puede no
-            ser exhaustiva. Si cree que su cuenta se ha visto comprometida, también debe actualizar su contraseña.
+            Algunas de sus sesiones recientes se listan a continuación; sin embargo, esta lista puede no
+            ser exhaustiva, puedes cerrar todas las sesiones.
         </div>
 
         @if (count($this->sessions) > 0)

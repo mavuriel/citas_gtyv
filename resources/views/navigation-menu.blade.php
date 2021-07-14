@@ -39,13 +39,31 @@ $nav_links = [
                 {{-- Links de la barra de navegacion de escritorio --}}
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     {{-- Ciclo para crear diferentes links en la barra usando el array del principio --}}
+
+                    {{-- Verifica si esta autitenticado --}}
                     @auth
+                    {{-- Si el usuario autenticado cuenta con el rol de admin --}}
+                    @if (auth()->user()->rol->key == 'admin')
                     @foreach ($nav_links as $n )
                     <x-jet-nav-link href="{{ $n['route'] }}" :active="$n['active']">
                         {{ $n['name'] }}
                     </x-jet-nav-link>
                     @endforeach
+                    {{--Si el usuario autenticado cuenta con el rol de estudiante --}}
+                    @elseif(auth()->user()->rol->key == 'estudiante')
+                    <x-jet-nav-link href="{{route('inicio.estudiante')}}"
+                        :active="request()->routeIs('inicio.estudiante')">
+                        {{'Estudiante'}}
+                    </x-jet-nav-link>
+                    @endif
+                    {{-- Si no esta autenticado solo muestra esta opcion --}}
+                    @else
+                    <x-jet-nav-link href="{{route('index')}}" :active="request()->routeIs('index')">
+                        {{'TecNM Campus Veracruz'}}
+                    </x-jet-nav-link>
                     @endauth
+
+
                     {{-- ubicacion del archivo original en vendor/laravel/jetstream/resources/components/nav-link.blade.php --}}
                 </div>
             </div>
@@ -141,12 +159,27 @@ $nav_links = [
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden ">
         <div class="pt-2 pb-3 space-y-1">
             {{-- Ciclo para crear diferentes links en la barra usando el array del principio --}}
+            {{-- Verifica si el usuario esta autenticado --}}
             @auth
+            {{-- Verifica si el usuario tiene el rol de admin --}}
+            @if(auth()->user()->rol->key == 'admin')
             @foreach ($nav_links as $n )
             <x-jet-responsive-nav-link href="{{ $n['route'] }}" :active="$n['active']">
                 {{ $n['name'] }}
             </x-jet-responsive-nav-link>
             @endforeach
+            {{-- Verifica si el usuario tiene el rol de estudiante --}}
+            @elseif(auth()->user()->rol->key == 'estudiante')
+            <x-jet-responsive-nav-link href="{{route('inicio.estudiante')}}"
+                :active="request()->routeIs('inicio.estudiante')">
+                {{'Estudiante'}}
+            </x-jet-responsive-nav-link>
+            @endif
+            {{-- Si no esta autenticado --}}
+            @else
+            <x-jet-responsive-nav-link href="{{route('index')}}" :active="request()->routeIs('index')">
+                {{'TecNM Campus Veracruz'}}
+            </x-jet-responsive-nav-link>
             @endauth
         </div>
 
