@@ -21,11 +21,6 @@ Route::get('/', HomeController::class)->name('index');
 //Pagina principal estudiante
 Route::get('/estudiante', [EstudianteController::class, 'index'])->name('inicio.estudiante');
 
-/* TODO:
-
-        informacion personal *no se ha hecho*
-*/
-
 //Creacion de cita
 Route::get('/cita', [EstudianteController::class, 'create'])->name('cita.estudiante');
 
@@ -44,17 +39,20 @@ Route::post('/cita/actualizar/{id}', [EstudianteController::class, 'update'])->n
         tal vez cambiarlo por una funcion de status (cita tomada o no tomada)
         vista de escritorio
 */
-//Citas estudiante
-Route::get('/miscitas/{cita}', [EstudianteController::class, 'show'])->name('show.estudiante');
-/* TODO: vista movil - escritorio
-        colocarlo en la barra de navegacion
-        no permitir que en la url al poner otro numero pueda accesar a otros datos
-        informacion personal *unido de estudiante*
-        tabla con sus citas
+//Informacion personal estudiante
+Route::get('/miscitas', [EstudianteController::class, 'show'])->name('show.estudiante');
+/* TODO:
+vista movil - escritorio
 */
 
+Route::post('/miscitas/act', [EstudianteController::class, 'storeInfo'])->name('store.info');
+
+//Registros proximos
+
+Route::get('/prox-reg', [AdmController::class, 'index'])->name('log.citas')->middleware('rol.admin');
+
 //Todos los registros
-Route::get('/registros', [AdmController::class, 'index'])->name('log.citas')->middleware('rol.admin');
+Route::get('/registros', [AdmController::class, 'allReg'])->name('log.all');
 
 /* TODO:
         regresar las citas de la fecha de hoy en adelante y en otra tabla menos elaborada todos los registros *checar lo de carbon php*

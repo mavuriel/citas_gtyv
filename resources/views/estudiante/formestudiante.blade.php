@@ -3,7 +3,6 @@
 @section('title','Registro de cita')
 
 @section('content')
-{{-- TODO: falta vista de escritorio --}}
 <main class="container flex flex-col justify-center items-center min-h-90">
     {{-- Card --}}
     <div class="bg-white w-80 lg:w-50 rounded-t-lg shadow-2xl px-4">
@@ -56,26 +55,18 @@
             <label for="name" class="tracking-wider font-light text-lg">
                 Nombre completo
             </label>
-            <input id="name"
-                class="min-w-full border-0 border-b-2 border-gray-500 placeholder-gray-400 font-mono text-xs pb-2 md:text-base"
-                type="text" name="nombre" placeholder="p. ej. Pedro Martinez Herrera" value="{{old('nombre')}}">
-            <div class="py-1">
-                @error('nombre')
-                <p class="font-thin text-xs text-red-400 tracking-wider">{{$message}}</p>
-                @enderror
-            </div>
+            <input type="hidden" name="nombre" value="{{$n}}">
+            <input
+                class="min-w-full border-0 border-b-2 border-gray-500 bg-opacity-30 bg-gray-400 cursor-not-allowed font-mono text-sm pb-2 mb-2 md:text-base"
+                id="name" type="text" value="{{$n}}" readonly>
 
             <label for="ncontrol" class="tracking-wider font-light text-lg">
                 Número de control
             </label>
-            <input id="ncontrol"
-                class="min-w-full border-0 border-b-2 border-gray-500 placeholder-gray-400 font-mono text-xs md:text-base"
-                type="text" name="control" placeholder="p. ej. E18029599" value="{{old('control')}}">
-            <div class="py-2">
-                @error('control')
-                <p class="font-thin text-xs text-red-400 tracking-wider">{{$message}}</p>
-                @enderror
-            </div>
+            <input type="hidden" name="control" value="{{$c}}">
+            <input
+                class="min-w-full border-0 border-b-2 border-gray-500 bg-opacity-30 bg-gray-400 cursor-not-allowed font-mono text-sm pb-2 mb-2 md:text-base"
+                id="ncontrol" type="text" value="{{$c}}" readonly>
 
     </div>
     {{-- Botones --}}

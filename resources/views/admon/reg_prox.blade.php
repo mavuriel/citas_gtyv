@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
-@section('title','Registros')
+@section('title','Registros proximos')
 
 @section('content')
+
 @if(Session::has('del_item'))
 <div class="dangeralert">
     <p>{{Session::get('del_item')}}</p>
@@ -14,9 +15,9 @@
     {{-- Modo movil --}}
     <div class="md:hidden contcards">
         <div class="conth1reg">
-            <h1 class="h1log">Citas registradas</h1>
+            <h1 class="h1log">Proximas citas</h1>
         </div>
-        @foreach ($citasm as $cita)
+        @foreach ($proxm as $cita)
         <div class="conteachcard">
             <table class="w-full">
                 <tr class="text-center">
@@ -78,7 +79,7 @@
     <table class="hidden md:table rounded-t-lg w-5/6 mx-auto bg-bluet text-white">
         <thead>
             <tr class="text-center border-b-2 border-gray-300">
-                <th class="h-2 uppercase p-4" colspan="7">Citas registradas</th>
+                <th class="h-2 uppercase p-4" colspan="7">Proximas citas</th>
             </tr>
         </thead>
         <tbody>
@@ -91,7 +92,7 @@
                 <td class="w-10 px-4 py-3">CREADO</td>
                 <td class="w-10 px-2 py-3"></td>
             </tr>
-            @foreach ($citas as $c)
+            @foreach ($prox as $c)
             <tr class="text-center border-b-2 border-gray-600">
                 <td class="px-4 py-3">
                     {{$c -> id}}
@@ -112,7 +113,7 @@
                     {{$c -> created_at}}
                 </td>
                 <td class="px-2 py-3">
-                    <a class="deletebtn" href="{{route('log.del',$cita-> id)}}">
+                    <a class="deletebtn" href="{{route('log.del',$c-> id)}}">
                         <i class="far fa-trash-alt"></i>
                     </a>
                 </td>
@@ -121,20 +122,18 @@
         </tbody>
     </table>
     <div class="mx-auto pt-3">
-        <a class="btncite" href="{{route('log.citas')}}">Ver citas proximas</a>
+        <a class="btncite" href="{{route('log.all')}}">Ver todas las citas</a>
     </div>
 </main>
+
 @endsection
 
 @section('footer')
-{{-- Ubicacion del archivo para la modificacion de estilos de la barra paginacion:
-        resources/views/vendor/pagination/tailwind.blade.php--}}
-
 <div class="container md:hidden">
-    {{ $citasm->links() }}
+    {{ $proxm->links() }}
 </div>
 
 <div class="container hidden md:table">
-    {{ $citas->links() }}
+    {{ $prox->links() }}
 </div>
 @endsection

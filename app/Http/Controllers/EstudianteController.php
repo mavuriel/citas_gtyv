@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cita;
+use App\Models\User;
 
 class EstudianteController extends Controller
 {
@@ -11,6 +12,7 @@ class EstudianteController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function index()
     {
         return view('estudiante.principalestudiante');
@@ -21,6 +23,10 @@ class EstudianteController extends Controller
         $req->validate([
             'fecha' => 'required'
         ]);
+
+        $n = auth()->user()->name;
+        $c = auth()->user()->n_control;
+
 
         /* Obtencion de la fecha en la vista estudiante */
         $fes = $req->fecha;
@@ -38,72 +44,16 @@ class EstudianteController extends Controller
                 break;
             case 1:
                 /* Todas las horas libres*/
-                return view('estudiante.formestudiante', compact('h', 'fes'));
+                return view('estudiante.formestudiante', compact('h', 'fes', 'n', 'c'));
                 break;
             case 2:
                 /* Algunas horas libres*/
-                return view('estudiante.formestudiante', compact('h', 'fes'));
+                return view('estudiante.formestudiante', compact('h', 'fes', 'n', 'c'));
                 break;
             default:
 
                 break;
         }
-    }
-
-    public function store(Request $req)
-    {
-        $req->validate([
-            'hora' => 'required',
-            'cita' => 'required',
-            'nombre' => array('required', 'regex:/^([A-Z]([a-z]+)(\s*)){2,}$/u'),
-            'control' => array('required', 'regex:/^[E]([1][0-9]|[2][0-1])([0][1]|[0][2])\d{4}$/i')
-        ]);
-
-        $cita = new Cita;
-
-        $cita->service = $req->cita;
-        $cita->date_taken = $req->fecha;
-        $cita->hour_taken = $req->hora;
-        $cita->n_control = $req->control;
-        $cita->name = $req->nombre;
-        $cita->asigned_to = 'prueba';
-        $cita->save();
-
-        return redirect()->route('show.estudiante', $cita->n_control);
-    }
-
-    public function update(Request $req, $id)
-    {
-        /*TODO: Jerarquia de validaciones
-            1. Datos vacios LISTO
-            2. Datos no modificados
-            3. Fecha/hora no disponible
-            4. Formato de datos LISTO
-        */
-        $req->validate([
-            'ahora' => 'required',
-            'servicea' => 'required',
-            'nombrea' => array('required', 'regex:/^([A-Z]([a-z]+)(\s*)){2,}$/u'),
-            'ncontrola' => array('required', 'regex:/^[E]([1][0-9]|[2][0-1])([0][1]|[0][2])\d{4}$/i')
-        ]);
-
-        $cita = new Cita();
-        $cita = Cita::find($id);
-        $cita->name = $req->nombrea;
-        $cita->n_control = $req->ncontrola;
-        $cita->date_taken = $req->afecha;
-        $cita->hour_taken = $req->ahora;
-        $cita->service = $req->servicea;
-
-        $cita->save();
-
-        return back()->with('dato_act', 'Dato actualizado correctamente');
-    }
-
-    public function show($cita)
-    {
-        //TODO: corregir error de seguridad, si alguien pone otro n. control entrara a otro registro
-        return view('estudiante.citasestudiante', compact('cita'));
     }
 
     public function searchHour($fes)
@@ -151,5 +101,97 @@ class EstudianteController extends Controller
                 return array($dis, $dato);
             }
         }
+    }
+
+    public function store(Request $req)
+    {
+        $req->validate([
+            'hora' => 'required',
+            'cita' => 'required',
+            'nombre' => array('required', 'regex:/^([A-Z]([a-z]+)(\s*)){2,}$/u'),
+            'control' => array('required', 'regex:/^[E]([1][0-9]|[2][0-1])([0][1]|[0][2])\d{4}$/i')
+        ]);
+
+        $cita = new Cita;
+
+        $cita->service = $req->cita;
+        $cita->date_taken = $req->fecha;
+        $cita->hour_taken = $req->hora;
+        $cita->n_control = $req->control;
+        $cita->name = $req->nombre;
+        $cita->save();
+
+        return redirect()->route('show.estudiante');
+    }
+
+    public function update(Request $req, $id)
+    {
+        /*TODO: Jerarquia de validaciones
+            1. Datos vacios LISTO
+            2. Datos no modificados
+            3. Fecha/hora no disponible
+            4. Formato de datos LISTO
+        */
+        $req->validate([
+            'ahora' => 'required',
+            'servicea' => 'required',
+            'nombrea' => array('required', 'regex:/^([A-Z]([a-z]+)(\s*)){2,}$/u'),
+            'ncontrola' => array('required', 'regex:/^[E]([1][0-9]|[2][0-1])([0][1]|[0][2])\d{4}$/i')
+        ]);
+
+        $cita = new Cita();
+        $cita = Cita::find($id);
+        $cita->name = $req->nombrea;
+        $cita->n_control = $req->ncontrola;
+        $cita->date_taken = $req->afecha;
+        $cita->hour_taken = $req->ahora;
+        $cita->service = $req->servicea;
+
+        $cita->save();
+
+        return back()->with('dato_act', 'Dato actualizado correctamente');
+    }
+
+    public function show()
+    {
+
+        $user = new User();
+
+        $user = User::all();
+
+        $id = auth()->user()->id;
+        $n = User::find($id);
+        $control = $n->n_control;
+
+        $citas = new Cita();
+        $citas = Cita::where('n_control', $control)
+            ->orderByDesc('date_taken')
+            ->paginate(4);
+
+        return view('estudiante.citasestudiante', compact('user', 'citas'));
+    }
+
+    public function storeInfo(Request $req)
+    {
+
+        $req->validate([
+            'areap' => 'required', //falta validacion
+            'phonep' => 'required', //falta validacion
+            'namep' => array('required', 'regex:/^([A-Z]([a-z]+)(\s*)){2,}$/u'),
+            'ncontrolp' => array('required', 'regex:/^[E]([1][0-9]|[2][0-1])([0][1]|[0][2])\d{4}$/i')
+        ]);
+
+        $id = auth()->user()->id;
+        $info = new User();
+        $info = User::find($id);
+
+        $info->name = $req->namep;
+        $info->area = $req->areap;
+        $info->n_control = $req->ncontrolp;
+        $info->phone = $req->phonep;
+
+        $info->save();
+
+        return back()->with('dato_act', 'Dato actualizado correctamente');
     }
 }

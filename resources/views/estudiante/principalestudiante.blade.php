@@ -22,12 +22,14 @@
 
         {{-- Primer Card --}}
         <div class="card1mb lg:mx-auto lg:row-start-2 lg:w-60 ">
-            <p class="card1p lg:pb-2 lg:text-xl lg:font-medium">Hola, por favor verifica tu información personal antes
-                de
-                agendar tu cita.
+            <p class="card1p lg:pb-2 lg:text-xl lg:font-medium">
+                Hola, por favor verifica tu información personal
+                antes de agendar tu cita.
             </p>
             <div class="contbtncard1">
-                <a class="btninfocard1 " href="https://www.google.com">Ver información</a>
+                <a class="btninfocard1 " href="{{route('show.estudiante')}}">
+                    Ver información
+                </a>
             </div>
         </div>
         {{-- Notificacion de horas no disponibles --}}

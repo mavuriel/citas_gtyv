@@ -1,11 +1,9 @@
 <x-jet-form-section submit="updateProfileInformation">
     <x-slot name="title">
-        {{-- {{ __('Profile Information') }} --}}
         Información de perfil
     </x-slot>
 
     <x-slot name="description">
-        {{--  {{ __('Update your account\'s profile information and email address.') }} --}}
         Actualiza la información de tu perfil y correo electrónico.
     </x-slot>
 

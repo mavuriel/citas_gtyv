@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cita;
+use Carbon\Carbon;
 
 class AdmController extends Controller
 {
@@ -11,12 +12,30 @@ class AdmController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function index()
     {
+        $hoy = Carbon::today()->toDateString();
 
-        $citas = Cita::paginate(4);
+        $proxm = Cita::where('date_taken', '>=', $hoy)
+            ->orderBy('date_taken')
+            ->orderBy('hour_taken')
+            ->paginate(4);
 
-        return view('admon.registros', compact('citas'));
+        $prox = Cita::where('date_taken', '>=', $hoy)
+            ->orderBy('date_taken')
+            ->orderBy('hour_taken')
+            ->paginate(8);
+
+        return view('admon.reg_prox', compact('prox', 'proxm'));
+    }
+
+    public function allReg()
+    {
+        $citasm = Cita::paginate(4);
+        $citas = Cita::paginate(8);
+
+        return view('admon.registros', compact('citasm', 'citas'));
     }
 
     public function searchID($id)
