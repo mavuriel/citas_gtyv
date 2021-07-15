@@ -9,7 +9,11 @@
 
 ## About Laravel
 
-Prueba
+Para iniciar el proyecto despues de la clonacion:
+npm install && npm run dev
+composer install
+php artisan migrate:refresh --seed
+
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 -   [Simple, fast routing engine](https://laravel.com/docs/routing).
